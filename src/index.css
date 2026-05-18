@@ -23,6 +23,9 @@
   --accent: #e9ebef;
   --accent-foreground: #44546a;
 
+  --border: rgba(0, 0, 0, 0.1);
+  --input: transparent;
+
   --status-success: #10b981;
   --status-warning: #f59e0b;
   --status-error: #cf3e40;

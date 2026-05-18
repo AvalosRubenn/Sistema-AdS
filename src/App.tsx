@@ -1,8 +1,11 @@
+import DashboardLA from "./components/DasboardLA";
+import AppLayout from "./Layouts/AppLayout";
+
 function App() {
   return (
-    <div className="w-screen h-screen flex justify-center items-center">
-      <h1>Próximamente...</h1>
-    </div>
+    <AppLayout>
+      <DashboardLA />
+    </AppLayout>
   );
 }
 
