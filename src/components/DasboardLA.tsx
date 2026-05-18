@@ -1,5 +1,6 @@
 import { Moon } from "lucide-react";
 import Calendar from "./Calendar";
+import ActiveProject from "./ActiveProject";
 
 function DashboardLA() {
   return (
@@ -42,6 +43,7 @@ function DashboardLA() {
 
         <div className="grid grid-cols-3 gap-5 p-5">
           {/* CARD */}
+          <ActiveProject />
           <div className="rounded-xl border border-border p-5">
             <div className="mb-4 flex items-start justify-between">
               <div>
