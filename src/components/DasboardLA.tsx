@@ -1,6 +1,43 @@
 import { Moon } from "lucide-react";
-import Calendar from "./Calendar";
 import ActiveProject from "./ActiveProject";
+
+const proyectos = [
+  {
+    nombreDelProyecto: "Sistema ADS",
+    celula: "No hay pa jajaja",
+    porcentaje: 15,
+    fecha: "15 ago",
+    prioridad: "MEDIA",
+  },
+  {
+    nombreDelProyecto: "Sistema de cobro contactless",
+    celula: "Actinver 2.0",
+    porcentaje: 60,
+    fecha: "20 ago",
+    prioridad: "ALTA",
+  },
+  {
+    nombreDelProyecto: "Garmin Forerunner 4",
+    celula: "Garmin",
+    porcentaje: 80,
+    fecha: "25 junio",
+    prioridad: "BAJA",
+  },
+  {
+    nombreDelProyecto: "Cumple de Rubén",
+    celula: "Ruben",
+    porcentaje: 50,
+    fecha: "15 junio",
+    prioridad: "ALTA",
+  },
+  {
+    nombreDelProyecto: "Medio Maratón",
+    celula: "Ruben",
+    porcentaje: 99,
+    fecha: "16 mayo",
+    prioridad: "BAJA",
+  },
+];
 
 function DashboardLA() {
   return (
@@ -25,7 +62,7 @@ function DashboardLA() {
             bg-background
           "
         >
-          ☾
+          <Moon />
         </button>
       </div>
 
@@ -43,108 +80,15 @@ function DashboardLA() {
 
         <div className="grid grid-cols-3 gap-5 p-5">
           {/* CARD */}
-          <ActiveProject />
-          <div className="rounded-xl border border-border p-5">
-            <div className="mb-4 flex items-start justify-between">
-              <div>
-                <h3 className="text-lg font-semibold text-zies-azul-1">
-                  Estrategia de Transformación Digital
-                </h3>
-
-                <p className="mt-1 text-sm text-muted-foreground">
-                  Célula: Estrategia
-                </p>
-              </div>
-
-              <div className="mt-1 h-3 w-3 rounded-full bg-emerald-500" />
-            </div>
-
-            <div className="mb-2 flex items-center justify-between">
-              <span className="text-sm text-muted-foreground">Progreso</span>
-
-              <span className="text-sm font-medium text-zies-azul-1">65%</span>
-            </div>
-
-            <div className="mb-4 h-2 rounded-full bg-muted">
-              <div className="h-2 w-[65%] rounded-full bg-emerald-500" />
-            </div>
-
-            <div className="flex items-center justify-between">
-              <span className="rounded-md bg-red-500 px-2 py-1 text-xs font-semibold text-white">
-                ALTA
-              </span>
-
-              <span className="text-xs text-muted-foreground">14 abr</span>
-            </div>
-          </div>
-
-          <div className="rounded-xl border border-border p-5">
-            <div className="mb-4 flex items-start justify-between">
-              <div>
-                <h3 className="text-lg font-semibold text-zies-azul-1">
-                  Análisis de Entrada al Mercado
-                </h3>
-
-                <p className="mt-1 text-sm text-muted-foreground">
-                  Célula: Investigación
-                </p>
-              </div>
-
-              <div className="mt-1 h-3 w-3 rounded-full bg-amber-500" />
-            </div>
-
-            <div className="mb-2 flex items-center justify-between">
-              <span className="text-sm text-muted-foreground">Progreso</span>
-
-              <span className="text-sm font-medium text-zies-azul-1">40%</span>
-            </div>
-
-            <div className="mb-4 h-2 rounded-full bg-muted">
-              <div className="h-2 w-[40%] rounded-full bg-amber-500" />
-            </div>
-
-            <div className="flex items-center justify-between">
-              <span className="rounded-md bg-red-500 px-2 py-1 text-xs font-semibold text-white">
-                ALTA
-              </span>
-
-              <span className="text-xs text-muted-foreground">9 abr</span>
-            </div>
-          </div>
-
-          <div className="rounded-xl border border-border p-5">
-            <div className="mb-4 flex items-start justify-between">
-              <div>
-                <h3 className="text-lg font-semibold text-zies-azul-1">
-                  Revisión de Excelencia Operacional
-                </h3>
-
-                <p className="mt-1 text-sm text-muted-foreground">
-                  Célula: Operaciones
-                </p>
-              </div>
-
-              <div className="mt-1 h-3 w-3 rounded-full bg-emerald-500" />
-            </div>
-
-            <div className="mb-2 flex items-center justify-between">
-              <span className="text-sm text-muted-foreground">Progreso</span>
-
-              <span className="text-sm font-medium text-zies-azul-1">85%</span>
-            </div>
-
-            <div className="mb-4 h-2 rounded-full bg-muted">
-              <div className="h-2 w-[85%] rounded-full bg-emerald-500" />
-            </div>
-
-            <div className="flex items-center justify-between">
-              <span className="rounded-md bg-amber-500 px-2 py-1 text-xs font-semibold text-white">
-                MEDIA
-              </span>
-
-              <span className="text-xs text-muted-foreground">7 abr</span>
-            </div>
-          </div>
+          {proyectos.map((p) => (
+            <ActiveProject
+              nombreDelProyecto={p.nombreDelProyecto}
+              celula={p.celula}
+              porcentaje={p.porcentaje}
+              fecha={p.fecha}
+              prioridad={p.prioridad}
+            />
+          ))}
         </div>
       </div>
 
