@@ -1,5 +1,7 @@
 import { Moon } from "lucide-react";
 import ActiveProject from "./ActiveProject";
+import TeamStress from "./TeamStress";
+import type { SingleStressProps } from "./SingleStress";
 
 const proyectos = [
   {
@@ -39,10 +41,38 @@ const proyectos = [
   },
 ];
 
+const teamStressData: SingleStressProps[] = [
+  {
+    nombre: "Rubén Avalos",
+    numeroDeProyectos: 3,
+    porcentaje: 25,
+  },
+  {
+    nombre: "Jhonatan Vergara",
+    numeroDeProyectos: 6,
+    porcentaje: 97,
+  },
+  {
+    nombre: "Karim Aguilera",
+    numeroDeProyectos: 4,
+    porcentaje: 70,
+  },
+  {
+    nombre: "Isaias Martinez",
+    numeroDeProyectos: 8,
+    porcentaje: 99,
+  },
+  { nombre: "Claudia Sheinbaum", numeroDeProyectos: 67, porcentaje: 67 },
+  {
+    nombre: "Andres Manuel Lopez Obrador",
+    numeroDeProyectos: 1,
+    porcentaje: 20,
+  },
+];
+
 function DashboardLA() {
   return (
     <div className="min-h-screen w-full bg-muted p-8">
-      {/* HEADER */}
       <div className="mb-8 flex items-start justify-between">
         <div>
           <h1 className="text-4xl font-bold text-zies-azul-1">
@@ -66,7 +96,7 @@ function DashboardLA() {
         </button>
       </div>
 
-      {/* ACTIVE PROJECTS */}
+      {/* PROYECTOS ACTIVOS */}
       <div className="rounded-2xl border border-border bg-background shadow-sm">
         <div className="border-b border-border px-6 py-5">
           <h2 className="text-2xl font-semibold text-zies-azul-1">
@@ -212,62 +242,7 @@ function DashboardLA() {
 
         {/* RIGHT COLUMN */}
         <div className="col-span-3 space-y-6">
-          {/* TEAM STRESS */}
-          <div className="rounded-2xl border border-border bg-background p-5 shadow-sm">
-            <h2 className="mb-6 text-2xl font-semibold text-zies-azul-1">
-              Estrés del Equipo
-            </h2>
-
-            <div className="space-y-5">
-              <div>
-                <div className="mb-2 flex items-center justify-between text-sm">
-                  <span className="font-medium text-zies-azul-1">
-                    Ana García
-                  </span>
-
-                  <span className="text-muted-foreground">
-                    3 proyectos · 75%
-                  </span>
-                </div>
-
-                <div className="h-2 rounded-full bg-muted">
-                  <div className="h-2 w-[75%] rounded-full bg-amber-500" />
-                </div>
-              </div>
-
-              <div>
-                <div className="mb-2 flex items-center justify-between text-sm">
-                  <span className="font-medium text-zies-azul-1">
-                    Carlos Ruiz
-                  </span>
-
-                  <span className="text-muted-foreground">
-                    5 proyectos · 92%
-                  </span>
-                </div>
-
-                <div className="h-2 rounded-full bg-muted">
-                  <div className="h-2 w-[92%] rounded-full bg-red-500" />
-                </div>
-              </div>
-
-              <div>
-                <div className="mb-2 flex items-center justify-between text-sm">
-                  <span className="font-medium text-zies-azul-1">
-                    María López
-                  </span>
-
-                  <span className="text-muted-foreground">
-                    2 proyectos · 45%
-                  </span>
-                </div>
-
-                <div className="h-2 rounded-full bg-muted">
-                  <div className="h-2 w-[45%] rounded-full bg-emerald-500" />
-                </div>
-              </div>
-            </div>
-          </div>
+          <TeamStress integrantes={teamStressData} />
 
           {/* GENERAL STATS */}
           <div className="rounded-2xl border border-border bg-background p-5 shadow-sm">
