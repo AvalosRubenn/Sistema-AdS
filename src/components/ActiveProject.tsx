@@ -1,5 +1,5 @@
 type Prioridad = "ALTA" | "MEDIA" | "BAJA";
-interface ActiveProjectProps {
+export interface ActiveProjectProps {
   nombreDelProyecto: string;
   celula: string;
   porcentaje: number;

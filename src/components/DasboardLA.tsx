@@ -1,12 +1,12 @@
 import { Moon } from "lucide-react";
-import ActiveProject from "./ActiveProject";
+import ActiveProject, { type ActiveProjectProps } from "./ActiveProject";
 import TeamStress from "./TeamStress";
 import type { SingleStressProps } from "./SingleStress";
 import GeneralStats from "./GeneralStats";
 import Calendar from "./Calendar";
 import ComitteeTracking from "./CommitteeTracking";
 
-const proyectos = [
+const proyectos: ActiveProjectProps[] = [
   {
     nombreDelProyecto: "Sistema ADS",
     celula: "No hay pa jajaja",
