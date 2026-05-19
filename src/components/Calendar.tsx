@@ -119,6 +119,10 @@ function Calendar() {
           31
         </div>
       </div>
+
+      <button className="text-white bg-zies-azul-2 w-full rounded-xl py-4 my-3 text-xl">
+        Nuevo Evento
+      </button>
     </div>
   );
 }
