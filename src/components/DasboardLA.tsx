@@ -2,6 +2,7 @@ import { Moon } from "lucide-react";
 import ActiveProject from "./ActiveProject";
 import TeamStress from "./TeamStress";
 import type { SingleStressProps } from "./SingleStress";
+import GeneralStats from "./GeneralStats";
 
 const proyectos = [
   {
@@ -244,75 +245,17 @@ function DashboardLA() {
         <div className="col-span-3 space-y-6">
           <TeamStress integrantes={teamStressData} />
 
-          {/* GENERAL STATS */}
-          <div className="rounded-2xl border border-border bg-background p-5 shadow-sm">
-            <h2 className="mb-6 text-2xl font-semibold text-zies-azul-1">
-              Estadísticas Generales
-            </h2>
-
-            {/* GRID */}
-            <div className="grid grid-cols-2 gap-4">
-              <div className="rounded-xl bg-muted p-4">
-                <p className="text-xs text-muted-foreground">ADS R1</p>
-
-                <h3 className="mt-2 text-2xl font-bold text-zies-azul-1">5</h3>
-              </div>
-
-              <div className="rounded-xl bg-muted p-4">
-                <p className="text-xs text-muted-foreground">ADS R2</p>
-
-                <h3 className="mt-2 text-2xl font-bold text-zies-azul-1">8</h3>
-              </div>
-
-              <div className="rounded-xl bg-muted p-4">
-                <p className="text-xs text-muted-foreground">ADS R3</p>
-
-                <h3 className="mt-2 text-2xl font-bold text-zies-azul-1">12</h3>
-              </div>
-
-              <div className="rounded-xl bg-muted p-4">
-                <p className="text-xs text-muted-foreground">CNEV</p>
-
-                <h3 className="mt-2 text-2xl font-bold text-zies-azul-1">3</h3>
-              </div>
-
-              <div className="rounded-xl bg-muted p-4">
-                <p className="text-xs text-muted-foreground">Discovery</p>
-
-                <h3 className="mt-2 text-2xl font-bold text-zies-azul-1">7</h3>
-              </div>
-
-              <div className="rounded-xl bg-muted p-4">
-                <p className="text-xs text-muted-foreground">Advisory</p>
-
-                <h3 className="mt-2 text-2xl font-bold text-zies-azul-1">9</h3>
-              </div>
-            </div>
-
-            {/* FOOTER */}
-            <div className="mt-6">
-              <p className="mb-3 text-xs text-muted-foreground">
-                Distribución de Salud
-              </p>
-
-              <div className="flex items-center gap-4 text-xs">
-                <div className="flex items-center gap-1">
-                  <div className="h-2 w-2 rounded-full bg-emerald-500" />
-                  <span>2</span>
-                </div>
-
-                <div className="flex items-center gap-1">
-                  <div className="h-2 w-2 rounded-full bg-amber-500" />
-                  <span>1</span>
-                </div>
-
-                <div className="flex items-center gap-1">
-                  <div className="h-2 w-2 rounded-full bg-red-500" />
-                  <span>1</span>
-                </div>
-              </div>
-            </div>
-          </div>
+          <GeneralStats
+            ADSR1={11}
+            ADSR2={10}
+            ADSR3={6}
+            ADSCNBV={7}
+            ADSDiscovery={12}
+            Asesorias={16}
+            buenaSalud={7}
+            mediaSalud={4}
+            malaSalud={3}
+          />
         </div>
       </div>
 
