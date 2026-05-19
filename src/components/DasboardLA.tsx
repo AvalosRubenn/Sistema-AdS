@@ -3,6 +3,7 @@ import ActiveProject from "./ActiveProject";
 import TeamStress from "./TeamStress";
 import type { SingleStressProps } from "./SingleStress";
 import GeneralStats from "./GeneralStats";
+import Calendar from "./Calendar";
 
 const proyectos = [
   {
@@ -97,7 +98,6 @@ function DashboardLA() {
         </button>
       </div>
 
-      {/* PROYECTOS ACTIVOS */}
       <div className="rounded-2xl border border-border bg-background shadow-sm">
         <div className="border-b border-border px-6 py-5">
           <h2 className="text-2xl font-semibold text-zies-azul-1">
@@ -110,7 +110,6 @@ function DashboardLA() {
         </div>
 
         <div className="grid grid-cols-3 gap-5 p-5">
-          {/* CARD */}
           {proyectos.map((p) => (
             <ActiveProject
               nombreDelProyecto={p.nombreDelProyecto}
@@ -123,125 +122,9 @@ function DashboardLA() {
         </div>
       </div>
 
-      {/* CALENDAR + SIDEBAR */}
       <div className="mt-8 grid grid-cols-12 gap-6">
-        {/* CALENDAR */}
-        <div className="col-span-9 rounded-2xl border border-border bg-background p-6 shadow-sm">
-          <div className="mb-8 flex items-start justify-between">
-            <button
-              className="
-                flex h-10 w-10 items-center justify-center
-                rounded-xl
-                bg-muted
-                text-zies-azul-1
-              "
-            >
-              ←
-            </button>
+        <Calendar />
 
-            <div className="text-center">
-              <h2 className="text-6xl font-light text-zies-azul-1">abril</h2>
-
-              <p className="mt-2 text-lg text-muted-foreground">2026</p>
-
-              <div className="mt-6">
-                <h3 className="text-7xl font-light text-zies-azul-2">13</h3>
-
-                <p className="mt-2 text-base text-muted-foreground">lunes</p>
-              </div>
-            </div>
-
-            <button
-              className="
-                flex h-10 w-10 items-center justify-center
-                rounded-xl
-                bg-muted
-                text-zies-azul-1
-              "
-            >
-              →
-            </button>
-          </div>
-
-          <div className="mb-4 grid grid-cols-7 gap-4 text-center text-sm text-muted-foreground">
-            <span>Dom</span>
-            <span>Lun</span>
-            <span>Mar</span>
-            <span>Mié</span>
-            <span>Jue</span>
-            <span>Vie</span>
-            <span>Sáb</span>
-          </div>
-
-          <div className="grid grid-cols-7 gap-4">
-            <div />
-            <div />
-            <div />
-
-            <div className="flex h-24 items-center justify-center rounded-2xl border border-border">
-              1
-            </div>
-
-            <div className="flex h-24 items-center justify-center rounded-2xl border border-border">
-              2
-            </div>
-
-            <div className="flex h-24 items-center justify-center rounded-2xl border border-border">
-              3
-            </div>
-
-            <div className="flex h-24 items-center justify-center rounded-2xl border border-border">
-              4
-            </div>
-
-            <div className="flex h-24 items-center justify-center rounded-2xl border border-border">
-              5
-            </div>
-
-            <div className="flex h-24 items-center justify-center rounded-2xl border border-border">
-              6
-            </div>
-
-            <div className="flex h-24 items-center justify-center rounded-2xl border border-border">
-              7
-            </div>
-
-            <div className="flex h-24 items-center justify-center rounded-2xl border border-border">
-              8
-            </div>
-
-            <div className="flex h-24 items-center justify-center rounded-2xl border border-border">
-              9
-            </div>
-
-            <div
-              className="
-                flex h-24 items-center justify-center
-                rounded-2xl
-                border-2 border-zies-azul-2
-              "
-            >
-              10
-            </div>
-
-            <div className="flex h-24 items-center justify-center rounded-2xl border border-border">
-              11
-            </div>
-
-            <div
-              className="
-                flex h-24 items-center justify-center
-                rounded-2xl
-                bg-zies-azul-2
-                text-white
-              "
-            >
-              13
-            </div>
-          </div>
-        </div>
-
-        {/* RIGHT COLUMN */}
         <div className="col-span-3 space-y-6">
           <TeamStress integrantes={teamStressData} />
 
