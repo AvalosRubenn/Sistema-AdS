@@ -5,6 +5,7 @@ import type { SingleStressProps } from "./SingleStress";
 import GeneralStats from "./GeneralStats";
 import Calendar from "./Calendar";
 import ComitteeTracking from "./CommitteeTracking";
+import RisksAndDependencies from "./RisksAndDependencies";
 
 const proyectos: ActiveProjectProps[] = [
   {
@@ -144,6 +145,10 @@ function DashboardLA() {
       </div>
 
       <ComitteeTracking />
+      <div className="w-full flex gap-6 mt-10">
+        <RisksAndDependencies nombre="Riesgos" />
+        <RisksAndDependencies nombre="Dependencias" />
+      </div>
     </div>
   );
 }
