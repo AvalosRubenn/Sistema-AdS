@@ -120,6 +120,33 @@ function Calendar() {
         </div>
       </div>
 
+      <div className="rounded-xl border border-border bg-muted mt-8">
+        <div className="flex justify-between items-center p-4 py-8">
+          <h3>lunes, 18 de mayo</h3>
+          <button className="py-2 px-4 bg-background rounded-xl text-muted-foreground">
+            Cerrar
+          </button>
+        </div>
+        <div className="rounded-xl bg-background mx-4 flex flex-col p-4 mb-4">
+          <div className="flex items-center  gap-2">
+            <div className="rounded-full w-4 h-4 bg-purple-500" />
+            <p className="text-xl">Presentación al cliente</p>
+          </div>
+          <div className="p-1 rounded-md bg-muted w-fit ml-6">
+            <p className="text-purple-500">Presentación</p>
+          </div>
+        </div>
+        <div className="rounded-xl bg-background mx-4 flex flex-col p-4 mb-4">
+          <div className="flex items-center  gap-2">
+            <div className="rounded-full w-4 h-4 bg-zies-azul-2" />
+            <p className="text-xl">Revisión de arquitectura</p>
+          </div>
+          <div className="p-1 rounded-md bg-muted w-fit ml-6">
+            <p className="text-zies-azul-2">Revisión</p>
+          </div>
+        </div>
+      </div>
+
       <button className="text-white bg-zies-azul-2 w-full rounded-xl py-4 my-3 text-xl">
         Nuevo Evento
       </button>
