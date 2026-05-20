@@ -1,3 +1,5 @@
+import RiskCard from "./RiskCard";
+
 interface RisksAndDependenciesProps {
   nombre: string;
 }
@@ -15,40 +17,14 @@ function RisksAndDependencies({ nombre }: RisksAndDependenciesProps) {
           <p>Alto: 2</p>
         </div>
       </div>
-      <div className="mt-6 pb-4 mb-4 mx-6 border border-border bg-muted rounded-xl flex flex-col">
-        <div className="flex items-center justify-between mt-2 mx-6">
-          <p className="text-xl">Riesgos y Dependencias Hardcodeados</p>
-          <p className="text-error px-2 py-1 text-xs rounded-lg bg-red-100">
-            ALTO
-          </p>
-        </div>
-        <p className="mt-2 mx-6 text-muted-foreground">
-          El componente no está preparado para recibir información
-        </p>
-        <div className="flex items-center justify-between mt-2 mx-6">
-          <p className="mt-2  text-muted-foreground">Rubén Avalos · 18 May</p>
-          <p className="text-error px-2 py-1 text-xs rounded-lg bg-red-100">
-            Activo
-          </p>
-        </div>
-      </div>
-      <div className="mt-6 pb-4 mb-4 mx-6 border border-border bg-muted rounded-xl flex flex-col">
-        <div className="flex items-center justify-between mt-2 mx-6">
-          <p className="text-xl">Riesgos y Dependencias Hardcodeados</p>
-          <p className="text-error px-2 py-1 text-xs rounded-lg bg-red-100">
-            ALTO
-          </p>
-        </div>
-        <p className="mt-2 mx-6 text-muted-foreground">
-          El componente no está preparado para recibir información
-        </p>
-        <div className="flex items-center justify-between mt-2 mx-6">
-          <p className="mt-2  text-muted-foreground">Rubén Avalos · 18 May</p>
-          <p className="text-error px-2 py-1 text-xs rounded-lg bg-red-100">
-            Activo
-          </p>
-        </div>
-      </div>
+      <RiskCard
+        titulo="Riesgos y Dependencias Hardcodeados"
+        nivel="MEDIO"
+        activo={false}
+        descripcion="El componente no está preparado para recibir información"
+        responsable="Rubén Avalos"
+        fecha="19 May"
+      />
     </div>
   );
 }
