@@ -1,5 +1,5 @@
 type Nivel = "BAJO" | "MEDIO" | "ALTO";
-interface RiskCardProps {
+export interface RiskCardProps {
   titulo: string;
   nivel: Nivel;
   activo: boolean;

@@ -6,6 +6,7 @@ import GeneralStats from "./GeneralStats";
 import Calendar from "./Calendar";
 import ComitteeTracking from "./CommitteeTracking";
 import RisksAndDependencies from "./RisksAndDependencies";
+import { type RiskCardProps } from "./RiskCard";
 
 const proyectos: ActiveProjectProps[] = [
   {
@@ -71,6 +72,44 @@ const teamStressData: SingleStressProps[] = [
     nombre: "Andres Manuel Lopez Obrador",
     numeroDeProyectos: 1,
     porcentaje: 20,
+  },
+];
+
+const riesgos: RiskCardProps[] = [
+  {
+    titulo: "Riesgos y Dependencias Hardcodeados",
+    nivel: "MEDIO",
+    activo: false,
+    descripcion: "El componente no está preparado para recibir información",
+    responsable: "Rubén Avalos",
+    fecha: "19 May",
+  },
+  {
+    titulo: "Calendario con problemas de renderizado",
+    nivel: "ALTO",
+    activo: true,
+    descripcion: "El componente está renderizando mal los días",
+    responsable: "Rubén Avalos",
+    fecha: "20 May",
+  },
+];
+const dependencias: RiskCardProps[] = [
+  {
+    titulo: "Figma incompleto",
+    nivel: "ALTO",
+    activo: true,
+    descripcion:
+      "El figma no tiene los diseños completos para poder hacer el desarrollo",
+    responsable: "Rubén Avalos",
+    fecha: "20 May",
+  },
+  {
+    titulo: "Calor en Yucatán",
+    nivel: "MEDIO",
+    activo: true,
+    descripcion: "Rubén no puede chambear bien en el calor",
+    responsable: "Rubén Avalos",
+    fecha: "20 May",
   },
 ];
 
@@ -146,8 +185,20 @@ function DashboardLA() {
 
       <ComitteeTracking />
       <div className="w-full flex gap-6 mt-10">
-        <RisksAndDependencies nombre="Riesgos" />
-        <RisksAndDependencies nombre="Dependencias" />
+        <RisksAndDependencies
+          nombre="Riesgos"
+          nivelAlto={1}
+          nivelMedio={2}
+          nivelBajo={1}
+          riesgosYDependencias={riesgos}
+        />
+        <RisksAndDependencies
+          nombre="Dependencias"
+          nivelAlto={2}
+          nivelMedio={1}
+          nivelBajo={1}
+          riesgosYDependencias={dependencias}
+        />
       </div>
     </div>
   );
