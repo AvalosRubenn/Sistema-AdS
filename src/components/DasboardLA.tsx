@@ -7,6 +7,7 @@ import Calendar from "./Calendar";
 import ComitteeTracking from "./CommitteeTracking";
 import RisksAndDependencies from "./RisksAndDependencies";
 import { type RiskCardProps } from "./RiskCard";
+import Timeline from "./Timeline";
 
 const proyectos: ActiveProjectProps[] = [
   {
@@ -182,6 +183,8 @@ function DashboardLA() {
           />
         </div>
       </div>
+
+      <Timeline />
 
       <ComitteeTracking />
       <div className="w-full flex gap-6 mt-10">
