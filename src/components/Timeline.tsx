@@ -71,7 +71,7 @@ const eventos: TimelineEvent[] = [
 
 function Timeline() {
   return (
-    <div className="rounded-2xl border border-border bg-background shadow-sm">
+    <div className="rounded-2xl border border-border bg-background shadow-sm mt-8">
       <div className="border-b border-border px-6 py-5">
         <h2 className="text-2xl font-semibold text-zies-azul-1">
           Línea de Tiempo Semanal

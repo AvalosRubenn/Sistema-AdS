@@ -1,13 +1,15 @@
 import { Moon } from "lucide-react";
-import ActiveProject, { type ActiveProjectProps } from "./ActiveProject";
-import TeamStress from "./TeamStress";
-import type { SingleStressProps } from "./SingleStress";
-import GeneralStats from "./GeneralStats";
-import Calendar from "./Calendar";
-import ComitteeTracking from "./CommitteeTracking";
-import RisksAndDependencies from "./RisksAndDependencies";
-import { type RiskCardProps } from "./RiskCard";
-import Timeline from "./Timeline";
+import ActiveProject, {
+  type ActiveProjectProps,
+} from "../components/ActiveProject";
+import TeamStress from "../components/TeamStress";
+import type { SingleStressProps } from "../components/SingleStress";
+import GeneralStats from "../components/GeneralStats";
+import Calendar from "../components/Calendar";
+import ComitteeTracking from "../components/CommitteeTracking";
+import RisksAndDependencies from "../components/RisksAndDependencies";
+import { type RiskCardProps } from "../components/RiskCard";
+import Timeline from "../components/Timeline";
 
 const proyectos: ActiveProjectProps[] = [
   {
@@ -122,10 +124,6 @@ function DashboardLA() {
           <h1 className="text-4xl font-bold text-zies-azul-1">
             Panel de Líder
           </h1>
-
-          <p className="mt-2 text-sm text-muted-foreground">
-            Supervisión estratégica y gestión de cartera de proyectos
-          </p>
         </div>
 
         <button

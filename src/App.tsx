@@ -1,10 +1,18 @@
-import DashboardLA from "./components/DasboardLA";
+import { Route, Routes } from "react-router-dom";
+
 import AppLayout from "./Layouts/AppLayout";
+
+import DashboardLA from "./pages/DasboardLA";
+import Tareas from "./pages/Tareas";
 
 function App() {
   return (
     <AppLayout>
-      <DashboardLA />
+      <Routes>
+        <Route path="/" element={<DashboardLA />} />
+
+        <Route path="/revision-tareas" element={<Tareas />} />
+      </Routes>
     </AppLayout>
   );
 }
