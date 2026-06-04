@@ -76,10 +76,6 @@ function Timeline() {
         <h2 className="text-2xl font-semibold text-zies-azul-1">
           Línea de Tiempo Semanal
         </h2>
-
-        <p className="mt-1 text-sm text-muted-foreground">
-          Vista estructurada de eventos de la semana
-        </p>
       </div>
       <div className="p-6">
         <div className="grid grid-cols-8 border border-border">
