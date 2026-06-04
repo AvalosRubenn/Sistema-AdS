@@ -5,7 +5,7 @@ function Login() {
     <div className=" flex h-screen w-screen items-center justify-center bg-background border-2">
       <div className="w-[25%] flex flex-col items-center justify-center gap-y-6 ">
         <div className="w-35 h-21 transform transition duration-300 hover:-translate-y-5">
-          <img src="src/assets/Logo.png" />
+          <img src="logo.png" />
         </div>
         <div className="flex flex-col h-full rounded-xl w-full shadow-xl bg-primary-foreground p-10 gap-y-6">
           <div>
