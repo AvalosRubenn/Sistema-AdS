@@ -1,19 +1,34 @@
-import { Route, Routes } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import AppLayout from "./Layouts/AppLayout";
 
+import Login from "./pages/Login";
 import DashboardLA from "./pages/DasboardLA";
 import RevisionDeTareas from "./pages/RevisionDeTareas";
 
 function App() {
   return (
-    <AppLayout>
-      <Routes>
-        <Route path="/" element={<DashboardLA />} />
+    <Routes>
+      <Route path="/login" element={<Login />} />
 
-        <Route path="/revision-tareas" element={<RevisionDeTareas />} />
-      </Routes>
-    </AppLayout>
+      <Route
+        path="/"
+        element={
+          <AppLayout>
+            <DashboardLA />
+          </AppLayout>
+        }
+      />
+
+      <Route
+        path="/revision-tareas"
+        element={
+          <AppLayout>
+            <RevisionDeTareas />
+          </AppLayout>
+        }
+      />
+    </Routes>
   );
 }
 
