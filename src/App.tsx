@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import AppLayout from "./Layouts/AppLayout";
 
 import DashboardLA from "./pages/DasboardLA";
-import Tareas from "./pages/Tareas";
+import RevisionDeTareas from "./pages/RevisionDeTareas";
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<DashboardLA />} />
 
-        <Route path="/revision-tareas" element={<Tareas />} />
+        <Route path="/revision-tareas" element={<RevisionDeTareas />} />
       </Routes>
     </AppLayout>
   );
