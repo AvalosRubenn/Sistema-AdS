@@ -1,8 +1,19 @@
+import { Route, Routes } from "react-router-dom";
+
+import AppLayout from "./Layouts/AppLayout";
+
+import DashboardLA from "./pages/DasboardLA";
+import RevisionDeTareas from "./pages/RevisionDeTareas";
+
 function App() {
   return (
-    <div className="w-screen h-screen flex justify-center items-center">
-      <h1>Próximamente...</h1>
-    </div>
+    <AppLayout>
+      <Routes>
+        <Route path="/" element={<DashboardLA />} />
+
+        <Route path="/revision-tareas" element={<RevisionDeTareas />} />
+      </Routes>
+    </AppLayout>
   );
 }
 
