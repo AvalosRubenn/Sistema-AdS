@@ -1,17 +1,10 @@
+import { useState } from "react";
 import { Search } from "lucide-react";
-import type { Tarea } from "../components/Task";
-import Task from "../components/Task";
 
-interface Tarea {
-  titulo: string;
-  proyecto: string;
-  arquitecto: string;
-  fecha: string;
-  version: string;
-  entrega: string;
-  sharepoint: string;
-  comentariosArquitecto: string;
-}
+import Task from "../components/Task";
+import TaskModal from "../components/TaskModal";
+
+import type { Tarea } from "../components/Task";
 
 const tareas: Tarea[] = [
   {
@@ -21,61 +14,29 @@ const tareas: Tarea[] = [
     fecha: "25 May, 15:00",
     version: "v1.2",
     entrega: "Entrega de Revisión de tareas",
-    sharepoint:
-      "https://zies.sharepoint.com/sites/ActinverArquitecturaF2/Documentos%20compar",
+    sharepoint: "https://sharepoint.com",
     comentariosArquitecto: "Se agregó la sección de Revisión de Tareas.",
   },
   {
-    titulo: "Sistema de cobro contactless",
+    titulo: "Sistema Contactless",
     proyecto: "Actinver 2.0",
     arquitecto: "Ana Banana",
     fecha: "20 May, 12:00",
     version: "v1.5",
     entrega: "Documento de Investigación",
-    sharepoint: "https://sharepoint.com/hola",
-    comentariosArquitecto: "Arquitectura mejorada",
-  },
-  {
-    titulo: "Sistema de cobro contactless",
-    proyecto: "Actinver 2.0",
-    arquitecto: "Ana Banana",
-    fecha: "20 May, 12:00",
-    version: "v1.5",
-    entrega: "Documento de Investigación",
-    sharepoint: "https://sharepoint.com/hola",
-    comentariosArquitecto: "Arquitectura mejorada",
-  },
-  {
-    titulo: "Sistema de cobro contactless",
-    proyecto: "Actinver 2.0",
-    arquitecto: "Ana Banana",
-    fecha: "20 May, 12:00",
-    version: "v1.5",
-    entrega: "Documento de Investigación",
-    sharepoint: "https://sharepoint.com/hola",
-    comentariosArquitecto: "Arquitectura mejorada",
-  },
-  {
-    titulo: "Sistema de cobro contactless",
-    proyecto: "Actinver 2.0",
-    arquitecto: "Ana Banana",
-    fecha: "20 May, 12:00",
-    version: "v1.5",
-    entrega: "Documento de Investigación",
-    sharepoint: "https://sharepoint.com/hola",
+    sharepoint: "https://sharepoint.com",
     comentariosArquitecto: "Arquitectura mejorada",
   },
 ];
 
 function RevisionDeTareas() {
   const [selectedTask, setSelectedTask] = useState<Tarea | null>(null);
+
   return (
     <div className="min-h-screen w-full bg-muted p-8">
-      <div className="mb-8">
-        <h1 className="text-4xl font-bold text-zies-azul-1">
-          Revisión de tareas
-        </h1>
-      </div>
+      <h1 className="mb-6 text-4xl font-bold text-zies-azul-1">
+        Revisión de tareas
+      </h1>
 
       <div className="relative mb-6">
         <Search
@@ -89,14 +50,12 @@ function RevisionDeTareas() {
 
         <input
           type="text"
-          placeholder="Buscar por nombre de proyecto, arquitecto o tarea..."
+          placeholder="Buscar..."
           className="
             h-11 w-full rounded-xl
             border border-border
             bg-background
             pl-11 pr-4
-            text-sm
-            outline-none
           "
         />
       </div>
@@ -113,6 +72,10 @@ function RevisionDeTareas() {
           </div>
         ))}
       </div>
+
+      {selectedTask && (
+        <TaskModal tarea={selectedTask} onClose={() => setSelectedTask(null)} />
+      )}
     </div>
   );
 }
