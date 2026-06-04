@@ -33,7 +33,7 @@ function Login() {
           </div>
           <div>
             <button
-              onClick={() => navigate("/")}
+              onClick={() => navigate("/dashboardLA")}
               className="
     bg-zies-rojo
     p-3
