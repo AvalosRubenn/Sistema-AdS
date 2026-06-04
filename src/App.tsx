@@ -9,10 +9,10 @@ import RevisionDeTareas from "./pages/RevisionDeTareas";
 function App() {
   return (
     <Routes>
-      <Route path="/login" element={<Login />} />
+      <Route path="/" element={<Login />} />
 
       <Route
-        path="/"
+        path="/dashboardLA"
         element={
           <AppLayout>
             <DashboardLA />
