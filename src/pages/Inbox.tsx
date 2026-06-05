@@ -1,4 +1,3 @@
-import { Pen } from "lucide-react";
 import PendingProject from "../components/PendingProject";
 import type { PendingProjectProps } from "../components/PendingProject";
 
