@@ -29,7 +29,12 @@ function Inbox() {
       </h2>
       <div className="flex flex-col itemx-center gap-4">
         {proyectosPendientes.map((p) => (
-          <PendingProject titulo={p.titulo} fecha={p.fecha} codigo={p.codigo} />
+          <PendingProject
+            titulo={p.titulo}
+            fecha={p.fecha}
+            codigo={p.codigo}
+            key={p.codigo}
+          />
         ))}
       </div>
     </div>
