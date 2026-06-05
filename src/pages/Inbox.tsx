@@ -2,6 +2,7 @@ import { useState } from "react";
 import PendingProject from "../components/PendingProject";
 import type { PendingProjectProps } from "../components/PendingProject";
 import PendingProjectModal from "../components/PendingProjectModal";
+import ProjectCreationModal from "../components/ProjectCreationModal";
 
 const proyectosPendientes: PendingProjectProps[] = [
   {
@@ -29,6 +30,8 @@ const proyectosPendientes: PendingProjectProps[] = [
 function Inbox() {
   const [selectedProject, setSelectedProject] =
     useState<PendingProjectProps | null>(null);
+  const [acceptedProject, setAcceptedProject] =
+    useState<PendingProjectProps | null>(null);
   return (
     <div className="min-h-screen w-full bg-muted p-8">
       <h1 className="mb-6 text-4xl font-bold text-zies-azul-1">Inbox</h1>
@@ -52,7 +55,11 @@ function Inbox() {
         <PendingProjectModal
           pendingProject={selectedProject}
           onClose={() => setSelectedProject(null)}
+          onAccept={() => setAcceptedProject(selectedProject)}
         />
+      )}
+      {acceptedProject && (
+        <ProjectCreationModal onClose={() => setAcceptedProject(null)} />
       )}
     </div>
   );

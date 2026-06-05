@@ -1,15 +1,21 @@
 import type { PendingProjectProps } from "./PendingProject";
-import { MoveLeft, FileText } from "lucide-react";
+import { MoveLeft, FileText, CircleCheckBig } from "lucide-react";
 import { createPortal } from "react-dom";
 
 interface PendingProjectModalProps {
   pendingProject: PendingProjectProps;
   onClose: () => void;
+  onAccept: () => void;
 }
 function PendingProjectModal({
   pendingProject,
   onClose,
+  onAccept,
 }: PendingProjectModalProps) {
+  const CloseAndAccept = () => {
+    onClose();
+    onAccept();
+  };
   return createPortal(
     <div className="fixed inset-0 z-50 flex items-center bg-black/50 justify-center">
       <div className="bg-background w-full max-w-4xl rounded-xl shadow-sm p-6">
@@ -41,6 +47,15 @@ function PendingProjectModal({
           <p className="text-muted-foreground leading-relaxed">
             {pendingProject.descripcion}
           </p>
+        </div>
+        <div className="mt-6 pt-4">
+          <button
+            className="p-3 bg-success text-background rounded-xl flex gap-2 items-center hover:opacity-90"
+            onClick={CloseAndAccept}
+          >
+            <CircleCheckBig size={20} />
+            Aceptar
+          </button>
         </div>
       </div>
     </div>,
