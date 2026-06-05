@@ -1,5 +1,5 @@
 import type { PendingProjectProps } from "./PendingProject";
-import { MoveLeft, FileText } from "lucide-react";
+import { MoveLeft, FileText, CircleCheckBig } from "lucide-react";
 import { createPortal } from "react-dom";
 
 interface PendingProjectModalProps {
@@ -41,6 +41,12 @@ function PendingProjectModal({
           <p className="text-muted-foreground leading-relaxed">
             {pendingProject.descripcion}
           </p>
+        </div>
+        <div className="mt-6 pt-4">
+          <button className="p-3 bg-success text-background rounded-xl flex gap-2 items-center hover:opacity-90">
+            <CircleCheckBig size={20} />
+            Aceptar
+          </button>
         </div>
       </div>
     </div>,
