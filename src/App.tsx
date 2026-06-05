@@ -5,6 +5,7 @@ import AppLayout from "./Layouts/AppLayout";
 import Login from "./pages/Login";
 import DashboardLA from "./pages/DasboardLA";
 import RevisionDeTareas from "./pages/RevisionDeTareas";
+import Inbox from "./pages/Inbox";
 
 function App() {
   return (
@@ -25,6 +26,15 @@ function App() {
         element={
           <AppLayout>
             <RevisionDeTareas />
+          </AppLayout>
+        }
+      />
+
+      <Route
+        path="/inbox"
+        element={
+          <AppLayout>
+            <Inbox />
           </AppLayout>
         }
       />
