@@ -13,11 +13,47 @@ const Options = [
   "ADS Discovery",
   "ADS Asesorias",
 ];
+const Architects = [
+  "Karim Aguilera",
+  "Jhonatan Vergara",
+  "Rubén Avalos",
+  "Osama Bin Laden",
+  "Charlie Kirk",
+];
+const Complexities = ["Alta", "Media", "Baja"];
+const Priorities = ["Alta", "Media", "Baja"];
+const PastProjects = [
+  "Ninguna",
+  "Proyecto movil",
+  "Sistema Ads",
+  "Actinver 1",
+  "Actinver 1.1",
+  "Actinver 1.2",
+];
 
 function ProjectCreationModal({ onClose }: ProjectCreationModalProps) {
   const [adsLevel, setAdsLevel] = useState("Selecciona un nivel de ADS");
+  const [architect, setArchitect] = useState("Selecciona un Arquitecto");
+  const [complexity, setComplexity] = useState("Seleccione la complejidad");
+  const [priority, setPriority] = useState("Seleccione la prioridad");
+  const [pastProject, setPastProject] = useState("Seleccione la prioridad");
+
+  //pastProject es EL PROYECTO ANTERIOR al que está relacionado EL PROYECTO ACTUAL*/
+
   const onAdsLevel = (option: string) => {
     setAdsLevel(option);
+  };
+  const onArchitect = (architect: string) => {
+    setArchitect(architect);
+  };
+  const onComplexity = (complexity: string) => {
+    setComplexity(complexity);
+  };
+  const onPriority = (priority: string) => {
+    setPriority(priority);
+  };
+  const onPastProject = (pastProject: string) => {
+    setPastProject(pastProject);
   };
   return (
     <div className="fixed inset-0 z-50 flex items-center bg-black/50 justify-center">
@@ -34,13 +70,50 @@ function ProjectCreationModal({ onClose }: ProjectCreationModalProps) {
             <p>Esto asignará el proyecto a un arquitecto</p>
           </div>
         </div>
-        <div className="bg-muted h-full w-full rounded-2xl p-4 flex gap-4 items-center">
-          <h4 className="">Nivel de Ads</h4>
-          <Dropdown
-            selected={adsLevel}
-            options={Options}
-            onAdsLevel={onAdsLevel}
-          />
+        <div className="bg-muted h-full w-full rounded-2xl p-4 flex flex-col gap-4 ">
+          <div className="h-full w-full my-4 flex gap-4 items-center">
+            <h4>Nivel de Ads</h4>
+
+            {/*A dropdown pasamos como prop la función onAdsLevel, unicamente para 
+          Propdrilling,para que vaya hacia DropdownItem*/}
+            <Dropdown
+              selected={adsLevel}
+              options={Options}
+              onAdsLevel={onAdsLevel}
+            />
+          </div>
+          <div className="h-full w-full my-4 flex gap-4 items-center">
+            <h4>Arquitecto</h4>
+            <Dropdown
+              selected={architect}
+              options={Architects}
+              onAdsLevel={onArchitect}
+            />
+          </div>
+          <div className="h-full w-full my-4 flex gap-4 items-center">
+            <h4>Complejidad del Proyecto</h4>
+            <Dropdown
+              selected={complexity}
+              options={Complexities}
+              onAdsLevel={onComplexity}
+            />
+          </div>
+          <div className="h-full w-full my-4 flex gap-4 items-center">
+            <h4>Prioridad del Proyecto</h4>
+            <Dropdown
+              selected={priority}
+              options={Priorities}
+              onAdsLevel={onPriority}
+            />
+          </div>
+          <div className="h-full w-full my-4 flex gap-4 items-center">
+            <h4>Relación a un proyecto anterior</h4>
+            <Dropdown
+              selected={pastProject}
+              options={PastProjects}
+              onAdsLevel={onPastProject}
+            />
+          </div>
         </div>
       </div>
     </div>
