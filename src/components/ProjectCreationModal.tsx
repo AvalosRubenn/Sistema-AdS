@@ -3,6 +3,7 @@ import Dropdown from "./Dropdown/Dropdown";
 import { useState } from "react";
 interface ProjectCreationModalProps {
   onClose: () => void;
+  onAccept: () => void;
 }
 
 const Options = [
@@ -31,12 +32,18 @@ const PastProjects = [
   "Actinver 1.2",
 ];
 
-function ProjectCreationModal({ onClose }: ProjectCreationModalProps) {
+function ProjectCreationModal({
+  onClose,
+  onAccept,
+}: ProjectCreationModalProps) {
   const [adsLevel, setAdsLevel] = useState("Selecciona un nivel de ADS");
   const [architect, setArchitect] = useState("Selecciona un Arquitecto");
   const [complexity, setComplexity] = useState("Seleccione la complejidad");
   const [priority, setPriority] = useState("Seleccione la prioridad");
-  const [pastProject, setPastProject] = useState("Seleccione la prioridad");
+  const [pastProject, setPastProject] = useState(
+    "Seleccione un proyecto pasado",
+  );
+  const [completeData, setCompleteData] = useState(true);
 
   //pastProject es EL PROYECTO ANTERIOR al que está relacionado EL PROYECTO ACTUAL*/
 
@@ -55,6 +62,28 @@ function ProjectCreationModal({ onClose }: ProjectCreationModalProps) {
   const onPastProject = (pastProject: string) => {
     setPastProject(pastProject);
   };
+
+  const ValidateProjectData = () => {
+    const isValid =
+      adsLevel !== "Selecciona un nivel de ADS" &&
+      architect !== "Selecciona un Arquitecto" &&
+      complexity !== "Seleccione la complejidad" &&
+      priority !== "Seleccione la prioridad" &&
+      pastProject !== "Seleccione un proyecto pasado";
+
+    setCompleteData(isValid);
+
+    return isValid;
+  };
+
+  const AcceptProject = () => {
+    const isValid = ValidateProjectData();
+    if (!isValid) {
+      return;
+    }
+    onAccept();
+  };
+
   return (
     <div className="fixed inset-0 z-50 flex items-center bg-black/50 justify-center">
       <div className="bg-background w-full max-w-4xl rounded-xl shadow-sm p-6 ">
@@ -114,6 +143,28 @@ function ProjectCreationModal({ onClose }: ProjectCreationModalProps) {
               onAdsLevel={onPastProject}
             />
           </div>
+        </div>
+        {!completeData && (
+          <div className="bg-background border border-error w-full rounded-xl mt-6 p-6 text-error flex items-center justify-center">
+            <p>Es necesario llenar todos los datos</p>
+          </div>
+        )}
+
+        <div className="flex gap-4 items-center mt-4">
+          <button
+            className="p-3 rounded-2xl text-background bg-success px-5 flex text-lg hover:opacity-80
+          "
+            onClick={AcceptProject}
+          >
+            {/*Es necesario cambiar lo que hace el onClick cuando tenga el back*/}
+            Aceptar
+          </button>
+          <button
+            className="p-3 px-5 rounded-2xl text-muted-foreground border text-lg hover:text-error hover:border-error"
+            onClick={onClose}
+          >
+            Cancelar
+          </button>
         </div>
       </div>
     </div>

@@ -67,7 +67,12 @@ function Inbox() {
           onAccept={() => setAcceptedProject(selectedProject)}
         />
       )}
-      {acceptedProject && <ProjectCreationModal onClose={ModalBack} />}
+      {acceptedProject && (
+        <ProjectCreationModal
+          onClose={ModalBack}
+          onAccept={() => setAcceptedProject(null)}
+        />
+      )}
     </div>
   );
 }
