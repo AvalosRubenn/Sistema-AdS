@@ -32,6 +32,15 @@ function Inbox() {
     useState<PendingProjectProps | null>(null);
   const [acceptedProject, setAcceptedProject] =
     useState<PendingProjectProps | null>(null);
+
+  const ModalBack = () => {
+    setSelectedProject(acceptedProject);
+    setAcceptedProject(null);
+  };
+  {
+    /*ModalBack permite intercambiar el proyecto actual entre los estados de selectedProject y acceptedProject,
+    de manera que solo es necesario enviar una función al componente de ProjectCreationModal*/
+  }
   return (
     <div className="min-h-screen w-full bg-muted p-8">
       <h1 className="mb-6 text-4xl font-bold text-zies-azul-1">Inbox</h1>
@@ -59,7 +68,10 @@ function Inbox() {
         />
       )}
       {acceptedProject && (
-        <ProjectCreationModal onClose={() => setAcceptedProject(null)} />
+        <ProjectCreationModal
+          onClose={ModalBack}
+          onAccept={() => setAcceptedProject(null)}
+        />
       )}
     </div>
   );
