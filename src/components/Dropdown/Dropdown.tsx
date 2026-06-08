@@ -27,15 +27,17 @@ function Dropdown({ selected, options, onAdsLevel }: DropdownProps) {
 
       {open && (
         <div className="absolute top-full left-0 z-50 mt-2 w-48 rounded-xl bg-background border overflow-hidden">
-          {/*Volvemos a pasar onAdsLevel y agregamos onOpen para que se cierre el menú dropdown
+          <div className="max-h-60 overflow-y-auto">
+            {/*Volvemos a pasar onAdsLevel y agregamos onOpen para que se cierre el menú dropdown
           al seleccionar una opción*/}
-          {options.map((option) => (
-            <DropdownItem
-              option={option}
-              onAdsLevel={onAdsLevel}
-              onOpen={onOpen}
-            />
-          ))}
+            {options.map((option) => (
+              <DropdownItem
+                option={option}
+                onAdsLevel={onAdsLevel}
+                onOpen={onOpen}
+              />
+            ))}
+          </div>
         </div>
       )}
     </div>
