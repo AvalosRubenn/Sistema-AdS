@@ -2,8 +2,14 @@ import { Settings, Plus } from "lucide-react";
 import type { Architect } from "../types/Architect";
 interface ArchitectSelectionProps {
   arquitectos: Architect[];
+  onClick: (architect: Architect) => void;
 }
-function ArchitectSelection({ arquitectos }: ArchitectSelectionProps) {
+function ArchitectSelection({ arquitectos, onClick }: ArchitectSelectionProps) {
+  const onSelectArchitect = (architect: Architect) => {
+    onClick(architect);
+    console.log(architect);
+    //Aquí debería ir el POST al back
+  };
   return (
     <div className="rounded-2xl border border-border bg-background shadow-sm">
       <div className="px-6 py-5 flex justify-center flex-col">
@@ -21,7 +27,10 @@ function ArchitectSelection({ arquitectos }: ArchitectSelectionProps) {
         </div>
         <div className="mt-4 flex items-center overflow-x-auto max-h-full gap-2 scrollbar-thin pb-2">
           {arquitectos.map((a) => (
-            <button className="bg-zies-azul-2 rounded-lg text-background p-2 px-3 w-fit h-fit whitespace-nowrap">
+            <button
+              className="bg-zies-azul-2 rounded-lg text-background p-2 px-3 w-fit h-fit whitespace-nowrap"
+              onClick={() => onSelectArchitect(a)}
+            >
               {a.name}
             </button>
           ))}

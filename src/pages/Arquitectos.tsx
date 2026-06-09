@@ -1,3 +1,4 @@
+import { useState } from "react";
 import ArchitectSelection from "../components/ArchitectSelection";
 import type { Architect } from "../types/Architect";
 const Architects: Architect[] = [
@@ -24,12 +25,17 @@ const Architects: Architect[] = [
 ];
 
 function Arquitectos() {
+  const [arquitectoSeleccionado, setArquitectoSeleccionado] =
+    useState<Architect | null>(null);
   return (
     <div className="min-h-screen w-full bg-muted p-8">
       <div className="mb-8 items-start">
         <h1 className="text-4xl font-bold">Arquitectos</h1>
       </div>
-      <ArchitectSelection arquitectos={Architects} />
+      <ArchitectSelection
+        arquitectos={Architects}
+        onClick={setArquitectoSeleccionado}
+      />
     </div>
   );
 }
