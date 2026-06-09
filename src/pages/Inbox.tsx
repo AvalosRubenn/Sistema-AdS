@@ -37,6 +37,10 @@ function Inbox() {
     setSelectedProject(acceptedProject);
     setAcceptedProject(null);
   };
+  const onRejected = () => {
+    setSelectedProject(null);
+    setAcceptedProject(null);
+  };
   {
     /*ModalBack permite intercambiar el proyecto actual entre los estados de selectedProject y acceptedProject,
     de manera que solo es necesario enviar una función al componente de ProjectCreationModal*/
@@ -65,6 +69,7 @@ function Inbox() {
           pendingProject={selectedProject}
           onClose={() => setSelectedProject(null)}
           onAccept={() => setAcceptedProject(selectedProject)}
+          onRejected={onRejected}
         />
       )}
       {acceptedProject && (
