@@ -7,7 +7,7 @@ interface ArchitectInformationProps {
 }
 function ArchitectInformation({ arquitecto }: ArchitectInformationProps) {
   return (
-    <div className="max-w-md w-fit h-fit bg-background rounded-2xl p-8 mt-4 shadow-sm flex flex-col gap-3 items-center justify-center">
+    <div className="w-2xs h-fit bg-background rounded-2xl p-8 mt-4 shadow-sm flex flex-col gap-3 items-center justify-center">
       <div className="w-52 h-52 rounded-2xl overflow-hidden">
         {arquitecto.img ? (
           <img
@@ -22,7 +22,8 @@ function ArchitectInformation({ arquitecto }: ArchitectInformationProps) {
         )}
       </div>
 
-      <h2 className="text-2xl font-semibold">{arquitecto.name}</h2>
+      <h2 className="text-2xl font-semibold mr-auto">{arquitecto.name}</h2>
+      <p className="mr-auto">{arquitecto.position}</p>
     </div>
   );
 }

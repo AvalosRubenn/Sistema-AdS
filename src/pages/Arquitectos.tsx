@@ -7,22 +7,32 @@ const Architects: Architect[] = [
     id: 1,
     name: "Ruben Avalos",
     img: "ruben.png",
+    position: "Practicante",
   },
   {
     id: 2,
     name: "Alejandro Martinez",
+    position: "Practicante",
   },
   {
     id: 3,
     name: "Jhonatan Vergara",
+    position: "Lider de Arquitectura ADS",
   },
   {
     id: 4,
     name: "Karim Aguilera",
+    position: "Arquitecto Sr. de Datos",
   },
   {
     id: 5,
     name: "Jhon Doe",
+    position: "Patrón",
+  },
+  {
+    id: 6,
+    name: "Bilbo Bolson",
+    position: "Saqueador",
   },
 ];
 
