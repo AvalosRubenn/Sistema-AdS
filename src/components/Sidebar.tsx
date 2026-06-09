@@ -4,6 +4,7 @@ import {
   LogOut,
   User,
   ClipboardCheck,
+  Users,
 } from "lucide-react";
 
 import { NavLink } from "react-router-dom";
@@ -76,6 +77,25 @@ function Sidebar() {
           <ClipboardCheck size={20} />
 
           <span className="font-medium">Revisión de tareas</span>
+        </NavLink>
+
+        <NavLink
+          to="/arquitectos"
+          className={({ isActive }) => `
+              flex items-center gap-3
+              rounded-lg
+              px-4 py-3
+              transition-colors
+              ${
+                isActive
+                  ? "bg-zies-azul-2 text-white"
+                  : "text-foreground hover:bg-accent"
+              }
+            `}
+        >
+          <Users size={20} />
+
+          <span className="font-medium">Arquitectos</span>
         </NavLink>
       </nav>
 
