@@ -1,5 +1,5 @@
 import { Settings, Plus } from "lucide-react";
-import type { Architect } from "../types/Architect";
+import type { Architect } from "../../types/Architect";
 interface ArchitectSelectionProps {
   arquitectos: Architect[];
   onClick: (architect: Architect) => void;
