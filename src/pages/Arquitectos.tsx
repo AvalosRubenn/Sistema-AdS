@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ArchitectSelection from "../components/ArchitectSelection";
+import ArchitectSelection from "../components/Architects/ArchitectSelection";
 import type { Architect } from "../types/Architect";
 const Architects: Architect[] = [
   {
