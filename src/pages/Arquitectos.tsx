@@ -1,10 +1,12 @@
 import { useState } from "react";
 import ArchitectSelection from "../components/Architects/ArchitectSelection";
 import type { Architect } from "../types/Architect";
+import ArchitectInformation from "../components/Architects/ArchitectInformation";
 const Architects: Architect[] = [
   {
     id: 1,
     name: "Ruben Avalos",
+    img: "ruben.png",
   },
   {
     id: 2,
@@ -36,6 +38,7 @@ function Arquitectos() {
         arquitectos={Architects}
         onClick={setArquitectoSeleccionado}
       />
+      <ArchitectInformation arquitecto={arquitectoSeleccionado} />
     </div>
   );
 }
