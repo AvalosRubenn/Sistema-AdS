@@ -28,7 +28,7 @@ const Architects: Architect[] = [
 
 function Arquitectos() {
   const [arquitectoSeleccionado, setArquitectoSeleccionado] =
-    useState<Architect | null>(null);
+    useState<Architect>(Architects[0]);
   return (
     <div className="min-h-screen w-full bg-muted p-8">
       <div className="mb-8 items-start">
