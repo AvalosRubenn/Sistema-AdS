@@ -3,8 +3,13 @@ import type { Architect } from "../../types/Architect";
 interface ArchitectSelectionProps {
   arquitectos: Architect[];
   onClick: (architect: Architect) => void;
+  onArchitectSettings: () => void;
 }
-function ArchitectSelection({ arquitectos, onClick }: ArchitectSelectionProps) {
+function ArchitectSelection({
+  arquitectos,
+  onClick,
+  onArchitectSettings,
+}: ArchitectSelectionProps) {
   const onSelectArchitect = (architect: Architect) => {
     onClick(architect);
     console.log(architect);
@@ -16,7 +21,10 @@ function ArchitectSelection({ arquitectos, onClick }: ArchitectSelectionProps) {
         <div className="flex items-center w-full">
           <h2 className="text-xl font-semibold">Selecciona un arquitecto</h2>
           <div className="flex items-center gap-2 ml-auto">
-            <button className="hover:bg-muted hover:rounded-full p-2">
+            <button
+              className="hover:bg-muted hover:rounded-full p-2"
+              onClick={onArchitectSettings}
+            >
               <Settings size={18} />
             </button>
             <button className="bg-zies-azul-2 rounded-lg flex gap-2 items-center text-background p-2 px-3">
