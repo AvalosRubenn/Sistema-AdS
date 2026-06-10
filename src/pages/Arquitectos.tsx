@@ -62,6 +62,15 @@ const Architects: Architect[] = [
   },
 ];
 
+const Celulas = ["Actinver 2.0", "Actinver 3.0", "Celula test"];
+const Permisos = [
+  "Read only",
+  "Admin",
+  "Admin temporal",
+  "Lider de equipo",
+  "Arquitecto",
+];
+
 function Arquitectos() {
   const [arquitectoSeleccionado, setArquitectoSeleccionado] =
     useState<Architect>(Architects[0]);
@@ -74,12 +83,18 @@ function Arquitectos() {
       </div>
       {settingsModal && (
         <ArchitectSettings
+          Celulas={Celulas}
+          Permisos={Permisos}
           onClose={() => setSettingsModal(false)}
           architect={arquitectoSeleccionado}
         />
       )}
       {addArchitectModal && (
-        <AddArchitectModal onClose={() => setAddArchitectModal(false)} />
+        <AddArchitectModal
+          onClose={() => setAddArchitectModal(false)}
+          Celulas={Celulas}
+          Permisos={Permisos}
+        />
       )}
       <ArchitectSelection
         arquitectos={Architects}

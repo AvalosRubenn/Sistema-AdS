@@ -2,20 +2,18 @@ import { useState } from "react";
 import type { Architect } from "../../types/Architect";
 import Dropdown from "../Dropdown/Dropdown";
 
-const Celulas = ["Actinver 2.0", "Actinver 3.0", "Celula test"];
-const Permisos = [
-  "Read only",
-  "Admin",
-  "Admin temporal",
-  "Lider de equipo",
-  "Arquitecto",
-];
-
 interface ArchitectSettingsProps {
   onClose: () => void;
   architect: Architect;
+  Celulas: string[];
+  Permisos: string[];
 }
-function ArchitectSettings({ onClose, architect }: ArchitectSettingsProps) {
+function ArchitectSettings({
+  onClose,
+  architect,
+  Celulas,
+  Permisos,
+}: ArchitectSettingsProps) {
   const [name, setName] = useState(architect.name);
   const [lastName, setLastName] = useState(architect.lastName);
   const [mail, setMail] = useState(architect.mail);
