@@ -4,11 +4,13 @@ interface ArchitectSelectionProps {
   arquitectos: Architect[];
   onClick: (architect: Architect) => void;
   onArchitectSettings: () => void;
+  onAddArchitect: () => void;
 }
 function ArchitectSelection({
   arquitectos,
   onClick,
   onArchitectSettings,
+  onAddArchitect,
 }: ArchitectSelectionProps) {
   const onSelectArchitect = (architect: Architect) => {
     onClick(architect);
@@ -27,7 +29,10 @@ function ArchitectSelection({
             >
               <Settings size={18} />
             </button>
-            <button className="bg-zies-azul-2 rounded-lg flex gap-2 items-center text-background p-2 px-3">
+            <button
+              className="bg-zies-azul-2 rounded-lg flex gap-2 items-center text-background p-2 px-3"
+              onClick={onAddArchitect}
+            >
               <Plus size={18} />
               Agregar
             </button>

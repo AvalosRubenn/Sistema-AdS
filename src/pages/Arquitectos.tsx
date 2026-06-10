@@ -3,6 +3,7 @@ import ArchitectSelection from "../components/Architects/ArchitectSelection";
 import type { Architect } from "../types/Architect";
 import ArchitectInformation from "../components/Architects/ArchitectInformation";
 import ArchitectSettings from "../components/Architects/ArchitectSettings";
+import AddArchitectModal from "../components/Architects/AddArchitectModal";
 const Architects: Architect[] = [
   {
     id: 1,
@@ -65,6 +66,7 @@ function Arquitectos() {
   const [arquitectoSeleccionado, setArquitectoSeleccionado] =
     useState<Architect>(Architects[0]);
   const [settingsModal, setSettingsModal] = useState(false);
+  const [addArchitectModal, setAddArchitectModal] = useState(false);
   return (
     <div className="min-h-screen w-full bg-muted p-8">
       <div className="mb-8 items-start">
@@ -76,10 +78,14 @@ function Arquitectos() {
           architect={arquitectoSeleccionado}
         />
       )}
+      {addArchitectModal && (
+        <AddArchitectModal onClose={() => setAddArchitectModal(false)} />
+      )}
       <ArchitectSelection
         arquitectos={Architects}
         onClick={setArquitectoSeleccionado}
         onArchitectSettings={() => setSettingsModal(true)}
+        onAddArchitect={() => setAddArchitectModal(true)}
       />
       <ArchitectInformation arquitecto={arquitectoSeleccionado} />
     </div>
