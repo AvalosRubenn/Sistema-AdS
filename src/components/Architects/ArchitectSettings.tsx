@@ -9,7 +9,14 @@ function ArchitectSettings({ onClose }: ArchitectSettingsProps) {
         <button>
           <MoveLeft size={18} onClick={onClose} />
         </button>
-        <div className="flex items-center gap-3 mb-6 ">To do...</div>
+        <div className="mb-6">
+          <h3 className="text-2xl">Configuración</h3>
+        </div>
+        <div className="bg-muted h-full w-full rounded-2xl p-4 flex flex-col gap-4">
+          <div className="h-full w-full my-4 flex gap-4 items-center">
+            <h4>Nombre</h4>
+          </div>
+        </div>
       </div>
     </div>
   );
