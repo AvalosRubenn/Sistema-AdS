@@ -2,6 +2,7 @@ import { useState } from "react";
 import ArchitectSelection from "../components/Architects/ArchitectSelection";
 import type { Architect } from "../types/Architect";
 import ArchitectInformation from "../components/Architects/ArchitectInformation";
+import ArchitectSettings from "../components/Architects/ArchitectSettings";
 const Architects: Architect[] = [
   {
     id: 1,
@@ -39,14 +40,20 @@ const Architects: Architect[] = [
 function Arquitectos() {
   const [arquitectoSeleccionado, setArquitectoSeleccionado] =
     useState<Architect>(Architects[0]);
+
+  const [settingsModal, setSettingsModal] = useState(true);
   return (
     <div className="min-h-screen w-full bg-muted p-8">
       <div className="mb-8 items-start">
         <h1 className="text-4xl font-bold">Arquitectos</h1>
       </div>
+      {settingsModal && (
+        <ArchitectSettings onClose={() => setSettingsModal(false)} />
+      )}
       <ArchitectSelection
         arquitectos={Architects}
         onClick={setArquitectoSeleccionado}
+        onArchitectSettings={() => setSettingsModal(true)}
       />
       <ArchitectInformation arquitecto={arquitectoSeleccionado} />
     </div>
