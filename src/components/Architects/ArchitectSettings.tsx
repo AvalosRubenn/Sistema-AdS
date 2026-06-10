@@ -29,6 +29,10 @@ function ArchitectSettings({ onClose, architect }: ArchitectSettingsProps) {
   const onPermissionsChange = (option: string) => {
     setPermissions(option);
   };
+  const onAccept = () => {
+    console.log(name, lastName, mail, permissions, celula, position);
+    onClose();
+  };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center bg-black/50 justify-center">
@@ -94,9 +98,7 @@ function ArchitectSettings({ onClose, architect }: ArchitectSettingsProps) {
           <button
             className="p-3 rounded-2xl text-background bg-success px-5 flex text-lg hover:opacity-80
           "
-            onClick={() =>
-              console.log(name, lastName, mail, permissions, celula, position)
-            }
+            onClick={onAccept}
           >
             {/*Es necesario cambiar lo que hace el onClick cuando tenga el back, debería de hacer
             un POST.*/}
