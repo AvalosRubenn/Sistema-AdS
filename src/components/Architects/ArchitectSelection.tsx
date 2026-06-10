@@ -39,7 +39,7 @@ function ArchitectSelection({
               className="bg-zies-azul-2 rounded-lg text-background p-2 px-3 w-fit h-fit whitespace-nowrap"
               onClick={() => onSelectArchitect(a)}
             >
-              {a.name}
+              {a.name} {a.lastName}
             </button>
           ))}
         </div>
