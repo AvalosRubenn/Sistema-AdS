@@ -1,4 +1,3 @@
-import { MoveLeft } from "lucide-react";
 import { useState } from "react";
 import type { Architect } from "../../types/Architect";
 import Dropdown from "../Dropdown/Dropdown";
@@ -34,9 +33,6 @@ function ArchitectSettings({ onClose, architect }: ArchitectSettingsProps) {
   return (
     <div className="fixed inset-0 z-50 flex items-center bg-black/50 justify-center">
       <div className="bg-background w-full max-w-4xl rounded-xl shadow-sm p-6 ">
-        <button>
-          <MoveLeft size={18} onClick={onClose} />
-        </button>
         <div className="mb-6">
           <h3 className="text-2xl">Configuración</h3>
         </div>
@@ -93,6 +89,25 @@ function ArchitectSettings({ onClose, architect }: ArchitectSettingsProps) {
               className="border rounded-xl p-3 bg-background"
             />
           </div>
+        </div>
+        <div className="flex gap-4 items-center mt-4">
+          <button
+            className="p-3 rounded-2xl text-background bg-success px-5 flex text-lg hover:opacity-80
+          "
+            onClick={() =>
+              console.log(name, lastName, mail, permissions, celula, position)
+            }
+          >
+            {/*Es necesario cambiar lo que hace el onClick cuando tenga el back, debería de hacer
+            un POST.*/}
+            Aceptar
+          </button>
+          <button
+            className="p-3 px-5 rounded-2xl text-muted-foreground border text-lg hover:text-error hover:border-error"
+            onClick={onClose}
+          >
+            Cancelar
+          </button>
         </div>
       </div>
     </div>
