@@ -22,7 +22,9 @@ function ArchitectInformation({ arquitecto }: ArchitectInformationProps) {
         )}
       </div>
 
-      <h2 className="text-2xl font-semibold mr-auto">{arquitecto.name}</h2>
+      <h2 className="text-2xl font-semibold mr-auto">
+        {arquitecto.name} {arquitecto.lastName}
+      </h2>
       <p className="mr-auto">{arquitecto.position}</p>
     </div>
   );

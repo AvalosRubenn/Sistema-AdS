@@ -1,6 +1,7 @@
 export type Architect = {
   id: number;
   name: string;
+  lastName: string;
   img?: string;
   position: string;
 };
