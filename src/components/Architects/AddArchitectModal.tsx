@@ -1,73 +1,92 @@
+import { MoveLeft } from "lucide-react";
 import { useState } from "react";
-import type { Architect } from "../../types/Architect";
 import Dropdown from "../Dropdown/Dropdown";
 
-interface ArchitectSettingsProps {
+interface AddArchitectModalProps {
   onClose: () => void;
-  architect: Architect;
   Celulas: string[];
   Permisos: string[];
 }
-function ArchitectSettings({
+function AddArchitectModal({
   onClose,
-  architect,
   Celulas,
   Permisos,
-}: ArchitectSettingsProps) {
-  const [name, setName] = useState(architect.name);
-  const [lastName, setLastName] = useState(architect.lastName);
-  const [mail, setMail] = useState(architect.mail);
-  const [permissions, setPermissions] = useState(architect.permissions);
-  const [celula, setCelula] = useState(architect.celula);
-  const [position, setPosition] = useState(architect.position);
-
+}: AddArchitectModalProps) {
+  const [name, setName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [mail, setMail] = useState("");
+  const [permissions, setPermissions] = useState("Selecciona un permiso");
+  const [celula, setCelula] = useState("Selecciona una célula");
+  const [position, setPosition] = useState("");
+  const [completeData, setCompleteData] = useState(true);
   const onCelulaChange = (option: string) => {
     setCelula(option);
   };
   const onPermissionsChange = (option: string) => {
     setPermissions(option);
   };
-  const onAccept = () => {
+
+  const ValidateArchitect = () => {
+    const isValid =
+      name !== "" &&
+      lastName !== "" &&
+      mail !== "" &&
+      permissions !== "Selecciona un permiso" &&
+      celula !== "Selecciona una célula" &&
+      position !== "";
+    setCompleteData(isValid);
+    return isValid;
+  };
+
+  const AcceptArchitect = () => {
+    const isValid = ValidateArchitect();
+    if (!isValid) {
+      return;
+    }
     console.log(name, lastName, mail, permissions, celula, position);
     onClose();
   };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center bg-black/50 justify-center">
-      <div className="bg-background w-full max-w-4xl rounded-xl shadow-sm p-6 ">
-        <div className="mb-6">
-          <h3 className="text-2xl">Configuración</h3>
-        </div>
+      <div className="bg-background rounded-xl w-full max-w-4xl shadow-sm p-6">
+        <button>
+          <MoveLeft size={18} onClick={onClose} />
+        </button>
+        <h3 className="text-2xl mb-4">Añadir arquitecto</h3>
         <div className="bg-muted h-full w-full rounded-2xl p-4 flex flex-col gap-4">
           <div className="h-full w-full my-4 flex gap-4 items-center">
-            <h4>Nombre</h4>
+            <h4 className="font-normal">Nombre</h4>
             <input
               type="text"
+              placeholder="Nombre..."
               value={name}
               onChange={(e) => setName(e.target.value)}
               className="border rounded-xl p-3 bg-background"
             />
           </div>
           <div className="h-full w-full my-4 flex gap-4 items-center">
-            <h4>Apellido</h4>
+            <h4 className="font-normal">Apellido</h4>
             <input
               type="text"
+              placeholder="Apellido..."
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
               className="border rounded-xl p-3 bg-background"
             />
           </div>
           <div className="h-full w-full my-4 flex gap-4 items-center">
-            <h4>Correo</h4>
+            <h4 className="font-normal">Correo</h4>
             <input
               type="text"
+              placeholder="Correo..."
               value={mail}
               onChange={(e) => setMail(e.target.value)}
               className="border rounded-xl p-3 bg-background"
             />
           </div>
           <div className="h-full w-full my-4 flex gap-4 items-center">
-            <h4>Célula</h4>
+            <h4 className="font-normal">Célula</h4>
             <Dropdown
               selected={celula}
               options={Celulas}
@@ -75,7 +94,7 @@ function ArchitectSettings({
             />
           </div>
           <div className="h-full w-full my-4 flex gap-4 items-center">
-            <h4>Permisos</h4>
+            <h4 className="font-normal">Permisos</h4>
             <Dropdown
               selected={permissions}
               options={Permisos}
@@ -83,30 +102,30 @@ function ArchitectSettings({
             />
           </div>
           <div className="h-full w-full my-4 flex gap-4 items-center">
-            <h4>Puesto</h4>
+            <h4 className="font-normal">Puesto</h4>
             <input
               type="text"
+              placeholder="Puesto..."
               value={position}
               onChange={(e) => setPosition(e.target.value)}
               className="border rounded-xl p-3 bg-background"
             />
           </div>
         </div>
+        {!completeData && (
+          <div className="bg-background border border-error w-full rounded-xl mt-6 p-6 text-error flex items-center justify-center">
+            <p>Es necesario llenar todos los datos</p>
+          </div>
+        )}
         <div className="flex gap-4 items-center mt-4">
           <button
             className="p-3 rounded-2xl text-background bg-success px-5 flex text-lg hover:opacity-80
           "
-            onClick={onAccept}
+            onClick={AcceptArchitect}
           >
             {/*Es necesario cambiar lo que hace el onClick cuando tenga el back, debería de hacer
             un POST.*/}
             Aceptar
-          </button>
-          <button
-            className="p-3 px-5 rounded-2xl text-muted-foreground border text-lg hover:text-error hover:border-error"
-            onClick={onClose}
-          >
-            Cancelar
           </button>
         </div>
       </div>
@@ -114,4 +133,4 @@ function ArchitectSettings({
   );
 }
 
-export default ArchitectSettings;
+export default AddArchitectModal;

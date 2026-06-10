@@ -3,6 +3,7 @@ import ArchitectSelection from "../components/Architects/ArchitectSelection";
 import type { Architect } from "../types/Architect";
 import ArchitectInformation from "../components/Architects/ArchitectInformation";
 import ArchitectSettings from "../components/Architects/ArchitectSettings";
+import AddArchitectModal from "../components/Architects/AddArchitectModal";
 const Architects: Architect[] = [
   {
     id: 1,
@@ -61,10 +62,20 @@ const Architects: Architect[] = [
   },
 ];
 
+const Celulas = ["Actinver 2.0", "Actinver 3.0", "Celula test"];
+const Permisos = [
+  "Read only",
+  "Admin",
+  "Admin temporal",
+  "Lider de equipo",
+  "Arquitecto",
+];
+
 function Arquitectos() {
   const [arquitectoSeleccionado, setArquitectoSeleccionado] =
     useState<Architect>(Architects[0]);
   const [settingsModal, setSettingsModal] = useState(false);
+  const [addArchitectModal, setAddArchitectModal] = useState(false);
   return (
     <div className="min-h-screen w-full bg-muted p-8">
       <div className="mb-8 items-start">
@@ -72,14 +83,24 @@ function Arquitectos() {
       </div>
       {settingsModal && (
         <ArchitectSettings
+          Celulas={Celulas}
+          Permisos={Permisos}
           onClose={() => setSettingsModal(false)}
           architect={arquitectoSeleccionado}
+        />
+      )}
+      {addArchitectModal && (
+        <AddArchitectModal
+          onClose={() => setAddArchitectModal(false)}
+          Celulas={Celulas}
+          Permisos={Permisos}
         />
       )}
       <ArchitectSelection
         arquitectos={Architects}
         onClick={setArquitectoSeleccionado}
         onArchitectSettings={() => setSettingsModal(true)}
+        onAddArchitect={() => setAddArchitectModal(true)}
       />
       <ArchitectInformation arquitecto={arquitectoSeleccionado} />
     </div>
