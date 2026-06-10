@@ -7,6 +7,8 @@ export type Architect = {
   celula: string;
   img?: string;
   position: string;
+  positionDescription: string;
+  performancePercentage: number;
 };
 
 //puesto o cargo de trabajo es referido como position en el tipado.
