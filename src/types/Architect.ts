@@ -11,6 +11,9 @@ export type Architect = {
   positionDescription: string;
   performancePercentage: number;
   projects: number;
+  projectsCanceled: number;
+  projectsActive: number;
+  projectsClosed: number;
   statusData: ChartItem[];
   complexityData: ChartItem[];
 };

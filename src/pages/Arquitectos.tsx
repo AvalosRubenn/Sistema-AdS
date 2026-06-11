@@ -6,6 +6,7 @@ import ArchitectSettings from "../components/Architects/ArchitectSettings";
 import AddArchitectModal from "../components/Architects/AddArchitectModal";
 import ArchitectRole from "../components/Architects/ArchitectRole";
 import ArchitectSummary from "../components/Architects/ArchitectSummary";
+import ArchitectSLAs from "../components/Architects/ArchitecsSLAs";
 const Architects: Architect[] = [
   {
     id: 1,
@@ -20,6 +21,9 @@ const Architects: Architect[] = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
     performancePercentage: 81,
     projects: 67,
+    projectsActive: 20,
+    projectsCanceled: 20,
+    projectsClosed: 37,
     statusData: [
       {
         label: "Aprobado",
@@ -82,6 +86,9 @@ const Architects: Architect[] = [
       "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     performancePercentage: 50,
     projects: 67,
+    projectsActive: 20,
+    projectsCanceled: 20,
+    projectsClosed: 37,
     statusData: [
       {
         label: "Aprobado",
@@ -143,6 +150,9 @@ const Architects: Architect[] = [
     positionDescription:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
     performancePercentage: 100,
+    projectsActive: 2,
+    projectsCanceled: 1,
+    projectsClosed: 2,
     projects: 5,
     statusData: [
       {
@@ -205,6 +215,9 @@ const Architects: Architect[] = [
     positionDescription:
       "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     performancePercentage: 100,
+    projectsActive: 4,
+    projectsCanceled: 0,
+    projectsClosed: 16,
     projects: 20,
     statusData: [
       {
@@ -268,6 +281,9 @@ const Architects: Architect[] = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
     performancePercentage: 30,
     projects: 50,
+    projectsActive: 25,
+    projectsCanceled: 8,
+    projectsClosed: 17,
     statusData: [
       {
         label: "Aprobado",
@@ -330,6 +346,9 @@ const Architects: Architect[] = [
       "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     performancePercentage: 70,
     projects: 30,
+    projectsActive: 5,
+    projectsCanceled: 10,
+    projectsClosed: 15,
     statusData: [
       {
         label: "Aprobado",
@@ -428,8 +447,12 @@ function Arquitectos() {
 
           <ArchitectRole arquitecto={arquitectoSeleccionado} />
         </div>
-
-        <ArchitectSummary arquitecto={arquitectoSeleccionado} />
+        <div className="flex flex-col gap-4">
+          <ArchitectSummary arquitecto={arquitectoSeleccionado} />
+          <div className="flex items-center gap-4 ">
+            <ArchitectSLAs arquitecto={arquitectoSeleccionado} />
+          </div>
+        </div>
       </div>
     </div>
   );
