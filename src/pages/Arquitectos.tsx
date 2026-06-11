@@ -6,6 +6,7 @@ import ArchitectSettings from "../components/Architects/ArchitectSettings";
 import AddArchitectModal from "../components/Architects/AddArchitectModal";
 import ArchitectRole from "../components/Architects/ArchitectRole";
 import ArchitectSummary from "../components/Architects/ArchitectSummary";
+import ArchitectSLAs from "../components/Architects/ArchitecsSLAs";
 const Architects: Architect[] = [
   {
     id: 1,
@@ -446,8 +447,12 @@ function Arquitectos() {
 
           <ArchitectRole arquitecto={arquitectoSeleccionado} />
         </div>
-
-        <ArchitectSummary arquitecto={arquitectoSeleccionado} />
+        <div className="flex flex-col gap-4">
+          <ArchitectSummary arquitecto={arquitectoSeleccionado} />
+          <div className="flex items-center gap-4 ">
+            <ArchitectSLAs arquitecto={arquitectoSeleccionado} />
+          </div>
+        </div>
       </div>
     </div>
   );
