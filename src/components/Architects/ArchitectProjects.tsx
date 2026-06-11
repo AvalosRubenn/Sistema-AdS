@@ -1,3 +1,18 @@
+const Proyectos = [
+  {
+    name: "Migración a AWS Actinver 2.0",
+    phase: "R1: Arquitectura básica",
+  },
+  {
+    name: "Sistema de pagos TDC Actinver 2.0",
+    phase: "R1: Arquitectura media",
+  },
+  {
+    name: "Documentación para sistema base",
+    phase: "ADS Discovery",
+  },
+];
+
 function ArchitectProjects() {
   return (
     <div className="w-full bg-background border border-border shadow-sm rounded-2xl">
@@ -15,14 +30,16 @@ function ArchitectProjects() {
                 <p className="font-bold ml-2">Fase del proyecto</p>
               </div>
             </div>
-            <button className="w-full flex items-center border-b border-border py-2 hover:bg-muted transition-colors">
-              <div className="w-1/2 text-left">
-                <p className=" ml-2">Migración a AWS Actinver 2.0</p>
-              </div>
-              <div className="w-1/2 text-left">
-                <p className=" ml-2">R1: Arquitectura básica</p>
-              </div>
-            </button>
+            {Proyectos.map((p) => (
+              <button className="w-full flex items-center border-b border-border py-2 hover:bg-muted transition-colors">
+                <div className="w-1/2 text-left">
+                  <p className=" ml-2">{p.name}</p>
+                </div>
+                <div className="w-1/2 text-left">
+                  <p className=" ml-2">{p.phase}</p>
+                </div>
+              </button>
+            ))}
           </div>
         </div>
       </div>
