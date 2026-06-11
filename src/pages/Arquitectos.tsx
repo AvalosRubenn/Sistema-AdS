@@ -25,6 +25,9 @@ const Architects: Architect[] = [
     projectsActive: 20,
     projectsCanceled: 20,
     projectsClosed: 37,
+    committeeAproved: 16,
+    committeeDiscard: 10,
+    committeeNA: 7,
     statusData: [
       {
         label: "Aprobado",
@@ -90,6 +93,9 @@ const Architects: Architect[] = [
     projectsActive: 20,
     projectsCanceled: 20,
     projectsClosed: 37,
+    committeeAproved: 16,
+    committeeDiscard: 10,
+    committeeNA: 7,
     statusData: [
       {
         label: "Aprobado",
@@ -154,6 +160,9 @@ const Architects: Architect[] = [
     projectsActive: 2,
     projectsCanceled: 1,
     projectsClosed: 2,
+    committeeAproved: 30,
+    committeeDiscard: 8,
+    committeeNA: 24,
     projects: 5,
     statusData: [
       {
@@ -220,6 +229,9 @@ const Architects: Architect[] = [
     projectsCanceled: 0,
     projectsClosed: 16,
     projects: 20,
+    committeeAproved: 25,
+    committeeDiscard: 8,
+    committeeNA: 15,
     statusData: [
       {
         label: "Aprobado",
@@ -285,6 +297,9 @@ const Architects: Architect[] = [
     projectsActive: 25,
     projectsCanceled: 8,
     projectsClosed: 17,
+    committeeAproved: 35,
+    committeeDiscard: 40,
+    committeeNA: 27,
     statusData: [
       {
         label: "Aprobado",
@@ -350,6 +365,9 @@ const Architects: Architect[] = [
     projectsActive: 5,
     projectsCanceled: 10,
     projectsClosed: 15,
+    committeeAproved: 6,
+    committeeDiscard: 7,
+    committeeNA: 67,
     statusData: [
       {
         label: "Aprobado",

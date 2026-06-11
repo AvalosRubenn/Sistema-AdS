@@ -16,6 +16,9 @@ export type Architect = {
   projectsClosed: number;
   statusData: ChartItem[];
   complexityData: ChartItem[];
+  committeeAproved: number;
+  committeeDiscard: number;
+  committeeNA: number;
 };
 
 //puesto o cargo de trabajo es referido como position en el tipado.
