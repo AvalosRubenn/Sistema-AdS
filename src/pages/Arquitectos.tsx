@@ -19,6 +19,56 @@ const Architects: Architect[] = [
     positionDescription:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
     performancePercentage: 81,
+    projects: 67,
+    statusData: [
+      {
+        label: "Aprobado",
+        value: 30,
+        color: "#345995",
+      },
+      {
+        label: "Descartado",
+        value: 20,
+        color: "#345995",
+      },
+      {
+        label: "En curso",
+        value: 5,
+        color: "#345995",
+      },
+      {
+        label: "Detenido",
+        value: 12,
+        color: "#345995",
+      },
+    ],
+    complexityData: [
+      {
+        label: "Muy alta",
+        value: 20,
+        color: "#345995",
+      },
+      {
+        label: "Alta",
+        value: 10,
+        color: "#345995",
+      },
+      {
+        label: "Media",
+        value: 22,
+        color: "#345995",
+      },
+      {
+        label: "Baja",
+        value: 7,
+        color: "#345995",
+      },
+      {
+        label: "None",
+        value: 8,
+        color: "#345995",
+      },
+    ],
   },
   {
     id: 2,
@@ -31,6 +81,56 @@ const Architects: Architect[] = [
     positionDescription:
       "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     performancePercentage: 50,
+    projects: 67,
+    statusData: [
+      {
+        label: "Aprobado",
+        value: 30,
+        color: "#345995",
+      },
+      {
+        label: "Descartado",
+        value: 20,
+        color: "#345995",
+      },
+      {
+        label: "En curso",
+        value: 5,
+        color: "#345995",
+      },
+      {
+        label: "Detenido",
+        value: 12,
+        color: "#345995",
+      },
+    ],
+    complexityData: [
+      {
+        label: "Muy alta",
+        value: 20,
+        color: "#345995",
+      },
+      {
+        label: "Alta",
+        value: 10,
+        color: "#345995",
+      },
+      {
+        label: "Media",
+        value: 22,
+        color: "#345995",
+      },
+      {
+        label: "Baja",
+        value: 7,
+        color: "#345995",
+      },
+      {
+        label: "None",
+        value: 8,
+        color: "#345995",
+      },
+    ],
   },
   {
     id: 3,
@@ -43,6 +143,56 @@ const Architects: Architect[] = [
     positionDescription:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
     performancePercentage: 100,
+    projects: 5,
+    statusData: [
+      {
+        label: "Aprobado",
+        value: 2,
+        color: "#345995",
+      },
+      {
+        label: "Descartado",
+        value: 1,
+        color: "#345995",
+      },
+      {
+        label: "En curso",
+        value: 1,
+        color: "#345995",
+      },
+      {
+        label: "Detenido",
+        value: 1,
+        color: "#345995",
+      },
+    ],
+    complexityData: [
+      {
+        label: "Muy alta",
+        value: 2,
+        color: "#345995",
+      },
+      {
+        label: "Alta",
+        value: 1,
+        color: "#345995",
+      },
+      {
+        label: "Media",
+        value: 1,
+        color: "#345995",
+      },
+      {
+        label: "Baja",
+        value: 1,
+        color: "#345995",
+      },
+      {
+        label: "None",
+        value: 0,
+        color: "#345995",
+      },
+    ],
   },
   {
     id: 4,
@@ -55,6 +205,56 @@ const Architects: Architect[] = [
     positionDescription:
       "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     performancePercentage: 100,
+    projects: 20,
+    statusData: [
+      {
+        label: "Aprobado",
+        value: 7,
+        color: "#345995",
+      },
+      {
+        label: "Descartado",
+        value: 2,
+        color: "#345995",
+      },
+      {
+        label: "En curso",
+        value: 6,
+        color: "#345995",
+      },
+      {
+        label: "Detenido",
+        value: 5,
+        color: "#345995",
+      },
+    ],
+    complexityData: [
+      {
+        label: "Muy alta",
+        value: 8,
+        color: "#345995",
+      },
+      {
+        label: "Alta",
+        value: 7,
+        color: "#345995",
+      },
+      {
+        label: "Media",
+        value: 3,
+        color: "#345995",
+      },
+      {
+        label: "Baja",
+        value: 1,
+        color: "#345995",
+      },
+      {
+        label: "None",
+        value: 1,
+        color: "#345995",
+      },
+    ],
   },
   {
     id: 5,
@@ -67,6 +267,56 @@ const Architects: Architect[] = [
     positionDescription:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
     performancePercentage: 30,
+    projects: 50,
+    statusData: [
+      {
+        label: "Aprobado",
+        value: 10,
+        color: "#345995",
+      },
+      {
+        label: "Descartado",
+        value: 10,
+        color: "#345995",
+      },
+      {
+        label: "En curso",
+        value: 10,
+        color: "#345995",
+      },
+      {
+        label: "Detenido",
+        value: 20,
+        color: "#345995",
+      },
+    ],
+    complexityData: [
+      {
+        label: "Muy alta",
+        value: 10,
+        color: "#345995",
+      },
+      {
+        label: "Alta",
+        value: 10,
+        color: "#345995",
+      },
+      {
+        label: "Media",
+        value: 10,
+        color: "#345995",
+      },
+      {
+        label: "Baja",
+        value: 10,
+        color: "#345995",
+      },
+      {
+        label: "None",
+        value: 10,
+        color: "#345995",
+      },
+    ],
   },
   {
     id: 6,
@@ -79,6 +329,56 @@ const Architects: Architect[] = [
     positionDescription:
       "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     performancePercentage: 70,
+    projects: 30,
+    statusData: [
+      {
+        label: "Aprobado",
+        value: 18,
+        color: "#345995",
+      },
+      {
+        label: "Descartado",
+        value: 4,
+        color: "#345995",
+      },
+      {
+        label: "En curso",
+        value: 6,
+        color: "#345995",
+      },
+      {
+        label: "Detenido",
+        value: 2,
+        color: "#345995",
+      },
+    ],
+    complexityData: [
+      {
+        label: "Muy alta",
+        value: 15,
+        color: "#345995",
+      },
+      {
+        label: "Alta",
+        value: 3,
+        color: "#345995",
+      },
+      {
+        label: "Media",
+        value: 7,
+        color: "#345995",
+      },
+      {
+        label: "Baja",
+        value: 1,
+        color: "#345995",
+      },
+      {
+        label: "None",
+        value: 4,
+        color: "#345995",
+      },
+    ],
   },
 ];
 
@@ -129,7 +429,7 @@ function Arquitectos() {
           <ArchitectRole arquitecto={arquitectoSeleccionado} />
         </div>
 
-        <ArchitectSummary />
+        <ArchitectSummary arquitecto={arquitectoSeleccionado} />
       </div>
     </div>
   );
