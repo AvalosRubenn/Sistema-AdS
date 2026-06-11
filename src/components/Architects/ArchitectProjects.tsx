@@ -13,7 +13,11 @@ const Proyectos = [
   },
 ];
 
-function ArchitectProjects() {
+interface ArchitectProjectsProps {
+  onClick: () => void;
+}
+
+function ArchitectProjects({ onClick }: ArchitectProjectsProps) {
   return (
     <div className="w-full bg-background border border-border shadow-sm rounded-2xl">
       <div className="px-6 py-5 flex flex-col gap-4">
@@ -31,7 +35,10 @@ function ArchitectProjects() {
               </div>
             </div>
             {Proyectos.map((p) => (
-              <button className="w-full flex items-center border-b border-border py-2 hover:bg-muted transition-colors">
+              <button
+                className="w-full flex items-center border-b border-border py-2 hover:bg-muted transition-colors"
+                onClick={onClick}
+              >
                 <div className="w-1/2 text-left">
                   <p className=" ml-2">{p.name}</p>
                 </div>
