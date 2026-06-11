@@ -473,7 +473,7 @@ function Arquitectos() {
           <ArchitectInformation arquitecto={arquitectoSeleccionado} />
 
           <ArchitectRole arquitecto={arquitectoSeleccionado} />
-          <ArchitectStress />
+          <ArchitectStress arquitecto={arquitectoSeleccionado} />
         </div>
         <div className="flex flex-col gap-4">
           <ArchitectSummary arquitecto={arquitectoSeleccionado} />
