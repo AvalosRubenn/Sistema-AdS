@@ -8,6 +8,8 @@ import ArchitectRole from "../components/Architects/ArchitectRole";
 import ArchitectSummary from "../components/Architects/ArchitectSummary";
 import ArchitectSLAs from "../components/Architects/ArchitecsSLAs";
 import ArchitectCommiteeStats from "../components/Architects/ArchitectCommitteeStats";
+import ArchitectProjects from "../components/Architects/ArchitectProjects";
+import ProjectDetailModal from "../components/ProjectDetailModal";
 const Architects: Architect[] = [
   {
     id: 1,
@@ -434,6 +436,7 @@ function Arquitectos() {
     useState<Architect>(Architects[0]);
   const [settingsModal, setSettingsModal] = useState(false);
   const [addArchitectModal, setAddArchitectModal] = useState(false);
+  const [projectDetailModal, setProjectDetailModal] = useState(false);
   return (
     <div className="min-h-screen w-full bg-muted p-8">
       <div className="mb-8 items-start">
@@ -454,6 +457,10 @@ function Arquitectos() {
           Permisos={Permisos}
         />
       )}
+
+      {projectDetailModal && (
+        <ProjectDetailModal onClose={() => setProjectDetailModal(false)} />
+      )}
       <ArchitectSelection
         arquitectos={Architects}
         onClick={setArquitectoSeleccionado}
@@ -472,6 +479,7 @@ function Arquitectos() {
             <ArchitectSLAs arquitecto={arquitectoSeleccionado} />
             <ArchitectCommiteeStats arquitecto={arquitectoSeleccionado} />
           </div>
+          <ArchitectProjects onClick={() => setProjectDetailModal(true)} />
         </div>
       </div>
     </div>
