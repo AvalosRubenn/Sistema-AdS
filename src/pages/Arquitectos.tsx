@@ -8,6 +8,7 @@ import ArchitectRole from "../components/Architects/ArchitectRole";
 import ArchitectSummary from "../components/Architects/ArchitectSummary";
 import ArchitectSLAs from "../components/Architects/ArchitecsSLAs";
 import ArchitectCommiteeStats from "../components/Architects/ArchitectCommitteeStats";
+import ArchitectProjects from "../components/Architects/ArchitectProjects";
 const Architects: Architect[] = [
   {
     id: 1,
@@ -472,6 +473,7 @@ function Arquitectos() {
             <ArchitectSLAs arquitecto={arquitectoSeleccionado} />
             <ArchitectCommiteeStats arquitecto={arquitectoSeleccionado} />
           </div>
+          <ArchitectProjects />
         </div>
       </div>
     </div>
