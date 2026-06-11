@@ -10,6 +10,7 @@ import ArchitectSLAs from "../components/Architects/ArchitecsSLAs";
 import ArchitectCommiteeStats from "../components/Architects/ArchitectCommitteeStats";
 import ArchitectProjects from "../components/Architects/ArchitectProjects";
 import ProjectDetailModal from "../components/ProjectDetailModal";
+import ArchitectStress from "../components/Architects/ArchitectStress";
 const Architects: Architect[] = [
   {
     id: 1,
@@ -472,6 +473,7 @@ function Arquitectos() {
           <ArchitectInformation arquitecto={arquitectoSeleccionado} />
 
           <ArchitectRole arquitecto={arquitectoSeleccionado} />
+          <ArchitectStress arquitecto={arquitectoSeleccionado} />
         </div>
         <div className="flex flex-col gap-4">
           <ArchitectSummary arquitecto={arquitectoSeleccionado} />
