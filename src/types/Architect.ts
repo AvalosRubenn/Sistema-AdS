@@ -1,3 +1,4 @@
+import type { ChartItem } from "../components/HorizontalBarChart";
 export type Architect = {
   id: number;
   name: string;
@@ -9,6 +10,9 @@ export type Architect = {
   position: string;
   positionDescription: string;
   performancePercentage: number;
+  projects: number;
+  statusData: ChartItem[];
+  complexityData: ChartItem[];
 };
 
 //puesto o cargo de trabajo es referido como position en el tipado.
