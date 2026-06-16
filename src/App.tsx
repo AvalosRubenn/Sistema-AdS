@@ -7,6 +7,7 @@ import DashboardLA from "./pages/DasboardLA";
 import RevisionDeTareas from "./pages/RevisionDeTareas";
 import Inbox from "./pages/Inbox";
 import Arquitectos from "./pages/Arquitectos";
+import DashboardArq from "./pages/DashboardArq";
 
 function App() {
   return (
@@ -45,6 +46,15 @@ function App() {
         element={
           <AppLayout>
             <Arquitectos />
+          </AppLayout>
+        }
+      />
+
+      <Route
+        path="/dashboard-arq"
+        element={
+          <AppLayout>
+            <DashboardArq />
           </AppLayout>
         }
       />
