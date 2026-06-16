@@ -97,6 +97,27 @@ function Sidebar() {
 
           <span className="font-medium">Arquitectos</span>
         </NavLink>
+
+        <NavLink
+          to="/dashboard-arq"
+          className={({ isActive }) =>
+            `
+              flex items-center gap-3
+              rounded-lg
+              px-4 py-3
+              transition-colors
+              ${
+                isActive
+                  ? "bg-zies-azul-2 text-white"
+                  : "text-foreground hover:bg-accent"
+              }
+            `
+          }
+        >
+          <LayoutDashboard size={20} />
+
+          <span className="font-medium">Dashboard Arquitecto</span>
+        </NavLink>
       </nav>
 
       <div className="border-t border-border p-4">
