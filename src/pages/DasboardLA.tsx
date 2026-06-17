@@ -1,7 +1,5 @@
 import { Moon } from "lucide-react";
-import ActiveProject, {
-  type ActiveProjectProps,
-} from "../components/ActiveProject";
+import { type ActiveProjectProps } from "../components/ActiveProject";
 import TeamStress from "../components/TeamStress";
 import type { SingleStressProps } from "../components/SingleStress";
 import GeneralStats from "../components/GeneralStats";
