@@ -1,5 +1,14 @@
 import { Clock, FileText, CircleCheckBig, Calendar } from "lucide-react";
-function ArchitectOverview() {
+interface ArchitectOverviewProps {
+  pendingTasks: number;
+  onReview: number;
+  done: number;
+}
+function ArchitectOverview({
+  pendingTasks,
+  onReview,
+  done,
+}: ArchitectOverviewProps) {
   return (
     <div className="rounded-2xl bg-background shadow-sm border border-border mt-4 w-full h-[50%]">
       <div className="flex items-center justify-center my-4 pb-2 border-b-border border-b w-full">
@@ -12,7 +21,9 @@ function ArchitectOverview() {
           </div>
           <div className="flex flex-col justify-center">
             <p>Tareas pendientes</p>
-            <p className="text-2xl font-semibold text-zies-azul-1">5</p>
+            <p className="text-2xl font-semibold text-zies-azul-1">
+              {pendingTasks}
+            </p>
           </div>
         </div>
         <div className="flex gap-4 items-center">
@@ -21,7 +32,9 @@ function ArchitectOverview() {
           </div>
           <div className="flex flex-col justify-center">
             <p>En revisión</p>
-            <p className="text-2xl font-semibold text-zies-azul-1">6</p>
+            <p className="text-2xl font-semibold text-zies-azul-1">
+              {onReview}
+            </p>
           </div>
         </div>
         <div className="flex gap-4 items-center">
@@ -30,7 +43,7 @@ function ArchitectOverview() {
           </div>
           <div className="flex flex-col justify-center">
             <p>Terminadas</p>
-            <p className="text-2xl font-semibold text-zies-azul-1">7</p>
+            <p className="text-2xl font-semibold text-zies-azul-1">{done}</p>
           </div>
         </div>
       </div>

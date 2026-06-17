@@ -134,7 +134,7 @@ function DashboardArq() {
           <Calendar />
         </div>
         <div className="w-[25%]">
-          <ArchitectOverview />
+          <ArchitectOverview pendingTasks={10} onReview={6} done={7} />
         </div>
       </div>
     </div>
