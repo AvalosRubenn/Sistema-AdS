@@ -1,4 +1,5 @@
 import type { ActiveProjectProps } from "../components/ActiveProject";
+import ArchitectOverview from "../components/Architects/ArchitectOverview";
 import ArchitectStress from "../components/Architects/ArchitectStress";
 import Calendar from "../components/Calendar";
 import ActiveProjects from "../components/Projects/ActiveProjects";
@@ -131,6 +132,9 @@ function DashboardArq() {
       <div className="flex w-full gap-6">
         <div className="w-[75%]">
           <Calendar />
+        </div>
+        <div className="w-[25%]">
+          <ArchitectOverview pendingTasks={10} onReview={6} done={7} />
         </div>
       </div>
     </div>
