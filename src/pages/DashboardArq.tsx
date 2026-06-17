@@ -1,5 +1,6 @@
 import type { ActiveProjectProps } from "../components/ActiveProject";
 import ArchitectStress from "../components/Architects/ArchitectStress";
+import Calendar from "../components/Calendar";
 import ActiveProjects from "../components/Projects/ActiveProjects";
 import type { Architect } from "../types/Architect";
 const proyectos: ActiveProjectProps[] = [
@@ -118,13 +119,18 @@ function DashboardArq() {
           Panel de arquitecto
         </h1>
       </div>
-      <div className="flex w-full gap-6 ">
+      <div className="flex w-full gap-6 mb-6">
         <div className="flex-1">
           <ActiveProjects proyectos={proyectos} />
         </div>
 
         <div className="shrink-0">
           <ArchitectStress arquitecto={Architects[0]} />
+        </div>
+      </div>
+      <div className="flex w-full gap-6">
+        <div className="w-[75%]">
+          <Calendar />
         </div>
       </div>
     </div>
