@@ -3,6 +3,7 @@ import ArchitectOverview from "../components/Architects/ArchitectOverview";
 import ArchitectStress from "../components/Architects/ArchitectStress";
 import Calendar from "../components/Calendar";
 import ActiveProjects from "../components/Projects/ActiveProjects";
+import Timeline from "../components/Timeline";
 import type { Architect } from "../types/Architect";
 const proyectos: ActiveProjectProps[] = [
   {
@@ -137,6 +138,7 @@ function DashboardArq() {
           <ArchitectOverview pendingTasks={10} onReview={6} done={7} />
         </div>
       </div>
+      <Timeline />
     </div>
   );
 }
