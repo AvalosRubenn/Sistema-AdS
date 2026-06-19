@@ -1,4 +1,8 @@
-function ProjectSelection() {
+interface ProjectSelectionProps {
+  projects: string[];
+}
+
+function ProjectSelection({ projects }: ProjectSelectionProps) {
   //Componente para la sección de Entrega de Tareas
   return (
     <div className="rounded-2xl shadow-sm bg-background">
@@ -10,6 +14,11 @@ function ProjectSelection() {
           <button className="bg-zies-azul-2 rounded-lg text-background p-2 px-3 w-fit h-fit whitespace-nowrap">
             Todos
           </button>
+          {projects.map((p) => (
+            <button className="bg-zies-azul-2 rounded-lg text-background p-2 px-3 w-fit h-fit whitespace-nowrap">
+              {p}
+            </button>
+          ))}
         </div>
       </div>
     </div>
