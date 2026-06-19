@@ -8,6 +8,7 @@ import RevisionDeTareas from "./pages/RevisionDeTareas";
 import Inbox from "./pages/Inbox";
 import Arquitectos from "./pages/Arquitectos";
 import DashboardArq from "./pages/DashboardArq";
+import EntregaDeTareas from "./pages/EntregaDeTareas";
 
 function App() {
   return (
@@ -55,6 +56,15 @@ function App() {
         element={
           <AppLayout>
             <DashboardArq />
+          </AppLayout>
+        }
+      />
+
+      <Route
+        path="/entrega-tareas"
+        element={
+          <AppLayout>
+            <EntregaDeTareas />
           </AppLayout>
         }
       />
