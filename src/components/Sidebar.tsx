@@ -5,6 +5,7 @@ import {
   User,
   ClipboardCheck,
   Users,
+  SquareCheckBig,
 } from "lucide-react";
 
 import { NavLink } from "react-router-dom";
@@ -118,6 +119,23 @@ function Sidebar() {
 
           <span className="font-medium">Dashboard Arquitecto</span>
         </NavLink>
+        <NavLink
+          to="/entrega-tareas"
+          className={({ isActive }) => `
+              flex items-center gap-3
+              rounded-lg
+              px-4 py-3
+              transition-colors
+              ${
+                isActive
+                  ? "bg-zies-azul-2 text-white"
+                  : "text-foreground hover:bg-accent"
+              }
+            `}
+        >
+          <SquareCheckBig size={20} />
+          <span className="font-medium">Entrega de tareas</span>
+        </NavLink>
       </nav>
 
       <div className="border-t border-border p-4">
@@ -137,7 +155,6 @@ function Sidebar() {
           </div>
         </div>
 
-        {/* Logout */}
         <button
           className="
             flex w-full items-center gap-3
