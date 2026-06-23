@@ -1,4 +1,4 @@
-import Kanban from "../components/Kanban";
+import Kanban from "../components/Kanban/Kanban";
 import ProjectSelection from "../components/Projects/ProjectSelection";
 
 const Projects: string[] = [
