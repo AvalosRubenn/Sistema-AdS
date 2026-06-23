@@ -1,3 +1,4 @@
+import Kanban from "../components/Kanban";
 import ProjectSelection from "../components/Projects/ProjectSelection";
 
 const Projects: string[] = [
@@ -13,6 +14,7 @@ function EntregaDeTareas() {
         <h1 className="text-4xl font-bold ">Entrega de Tareas</h1>
       </div>
       <ProjectSelection projects={Projects} />
+      <Kanban />
     </div>
   );
 }
