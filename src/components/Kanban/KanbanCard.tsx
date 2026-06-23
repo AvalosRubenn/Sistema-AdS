@@ -1,5 +1,5 @@
 type Priority = "ALTA" | "MEDIA" | "BAJA";
-interface KanbanCardProps {
+export interface KanbanCardProps {
   name: string;
   project: string;
   priority: Priority;
