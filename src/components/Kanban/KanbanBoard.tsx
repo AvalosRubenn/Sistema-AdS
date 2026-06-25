@@ -7,9 +7,10 @@ import { dropTargetForElements } from "@atlaskit/pragmatic-drag-and-drop/element
 interface KanbanBoardProps {
   Tasks: KanbanCardProps[];
   Title: string;
+  columnId: string;
 }
 
-function KanbanBoard({ Tasks, Title }: KanbanBoardProps) {
+function KanbanBoard({ Tasks, Title, columnId }: KanbanBoardProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [isDraggedOver, setIsDraggedOver] = useState<boolean>(false);
 
@@ -18,11 +19,12 @@ function KanbanBoard({ Tasks, Title }: KanbanBoardProps) {
     invariant(el);
     return dropTargetForElements({
       element: el,
+      getData: () => ({ columnId }),
       onDragEnter: () => setIsDraggedOver(true),
       onDragLeave: () => setIsDraggedOver(false),
       onDrop: () => setIsDraggedOver(false),
     });
-  }, []);
+  }, [columnId]);
 
   return (
     <div
@@ -38,6 +40,9 @@ function KanbanBoard({ Tasks, Title }: KanbanBoardProps) {
       <div className="flex-1 overflow-y-auto px-2 mt-4 flex flex-col gap-4 scrollbar-thin">
         {Tasks.map((t) => (
           <KanbanCard
+            key={t.id}
+            id={t.id}
+            columnId={columnId}
             name={t.name}
             project={t.project}
             priority={t.priority}
