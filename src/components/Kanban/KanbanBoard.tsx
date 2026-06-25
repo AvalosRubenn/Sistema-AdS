@@ -20,6 +20,7 @@ function KanbanBoard({ Tasks, Title, columnId }: KanbanBoardProps) {
     return dropTargetForElements({
       element: el,
       getData: () => ({ columnId }),
+      canDrop: () => columnId !== "Done",
       onDragEnter: () => setIsDraggedOver(true),
       onDragLeave: () => setIsDraggedOver(false),
       onDrop: () => setIsDraggedOver(false),

@@ -37,6 +37,7 @@ function KanbanCard({
     return draggable({
       element: el,
       getInitialData: () => ({ cardId: id, columnId: columnId }),
+      canDrag: () => columnId !== "Done",
       onGenerateDragPreview: () => {
         setDragging(true);
       },
