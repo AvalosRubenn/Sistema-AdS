@@ -1,5 +1,8 @@
+import { useRef, useState, useEffect } from "react";
+import invariant from "tiny-invariant";
 import type { KanbanCardProps } from "./KanbanCard";
 import KanbanCard from "./KanbanCard";
+import { dropTargetForElements } from "@atlaskit/pragmatic-drag-and-drop/element/adapter";
 
 interface KanbanBoardProps {
   Tasks: KanbanCardProps[];
@@ -7,8 +10,25 @@ interface KanbanBoardProps {
 }
 
 function KanbanBoard({ Tasks, Title }: KanbanBoardProps) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [isDraggedOver, setIsDraggedOver] = useState<boolean>(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    invariant(el);
+    return dropTargetForElements({
+      element: el,
+      onDragEnter: () => setIsDraggedOver(true),
+      onDragLeave: () => setIsDraggedOver(false),
+      onDrop: () => setIsDraggedOver(false),
+    });
+  }, []);
+
   return (
-    <div className="w-full h-[600px] bg-background border border-border shadow-sm rounded-xl p-2 flex flex-col">
+    <div
+      ref={ref}
+      className="w-full h-[600px] bg-background border border-border shadow-sm rounded-xl p-2 flex flex-col"
+    >
       <div className="border-b border-border pl-4 ">
         <p className="font-bold text-xl">{Title}</p>
         <p>
