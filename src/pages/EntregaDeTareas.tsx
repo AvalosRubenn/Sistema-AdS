@@ -10,6 +10,7 @@ const Projects: string[] = [
 
 const ToDo: KanbanCardProps[] = [
   {
+    id: "todo-1",
     name: "R1 - Investigación inicial",
     project: "Cuentas remuneradas",
     priority: "BAJA",
@@ -18,30 +19,35 @@ const ToDo: KanbanCardProps[] = [
 ];
 const Doing: KanbanCardProps[] = [
   {
+    id: "doing-1",
     name: "R1 - Investigación inicial",
     project: "Papu cryptos",
     priority: "BAJA",
     date: "20 jun",
   },
   {
+    id: "doing-2",
     name: "R2 - Diagrama de Arquitectura",
     project: "Papu cryptos",
     priority: "MEDIA",
     date: "20 jun",
   },
   {
+    id: "doing-3",
     name: "R3 - Planeación de blockchain",
     project: "Papu cryptos",
     priority: "ALTA",
     date: "20 jun",
   },
   {
+    id: "doing-4",
     name: "R3 - Planeación de rugpull",
     project: "Papu cryptos",
     priority: "ALTA",
     date: "20 jun",
   },
   {
+    id: "doing-5",
     name: "R3 - Planeación de rugpull 2",
     project: "Papu cryptos",
     priority: "ALTA",
@@ -50,18 +56,21 @@ const Doing: KanbanCardProps[] = [
 ];
 const Ready: KanbanCardProps[] = [
   {
+    id: "ready-1",
     name: "R1 - Investigación inicial",
     project: "Cuentas remuneradas",
     priority: "MEDIA",
     date: "20 jun",
   },
   {
+    id: "ready-2",
     name: "R2 - Investigación inicial",
     project: "Cuentas remuneradas",
     priority: "ALTA",
     date: "28 jun",
   },
   {
+    id: "ready-3",
     name: "R1 - Investigación inicial",
     project: "Cuentas remuneradas",
     priority: "ALTA",
@@ -70,19 +79,20 @@ const Ready: KanbanCardProps[] = [
 ];
 const Done: KanbanCardProps[] = [
   {
+    id: "done-1",
     name: "R1 - Investigación inicial",
     project: "Migración AWS",
     priority: "MEDIA",
     date: "20 jun",
   },
   {
+    id: "done-2",
     name: "Discovery - Actinver",
     project: "Actinver 3.0",
     priority: "ALTA",
     date: "3 jul",
   },
 ];
-
 function EntregaDeTareas() {
   return (
     <div className="min-h-screen w-full bg-muted p-8">
@@ -90,7 +100,12 @@ function EntregaDeTareas() {
         <h1 className="text-4xl font-bold ">Entrega de Tareas</h1>
       </div>
       <ProjectSelection projects={Projects} />
-      <Kanban ToDo={ToDo} Doing={Doing} Ready={Ready} Done={Done} />
+      <Kanban
+        InitialToDo={ToDo}
+        InitialDoing={Doing}
+        InitialReady={Ready}
+        InitialDone={Done}
+      />
     </div>
   );
 }

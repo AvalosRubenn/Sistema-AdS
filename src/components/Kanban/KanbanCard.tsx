@@ -4,10 +4,15 @@ import { draggable } from "@atlaskit/pragmatic-drag-and-drop/element/adapter";
 
 type Priority = "ALTA" | "MEDIA" | "BAJA";
 export interface KanbanCardProps {
+  id: string;
   name: string;
   project: string;
   priority: Priority;
   date: string;
+}
+
+interface KanbanCardComponentProps extends KanbanCardProps {
+  columnId: string;
 }
 
 const priorityStyles = {
@@ -15,7 +20,14 @@ const priorityStyles = {
   MEDIA: { bg: "bg-warning" },
   BAJA: { bg: "bg-success" },
 };
-function KanbanCard({ name, project, priority, date }: KanbanCardProps) {
+function KanbanCard({
+  id,
+  name,
+  project,
+  priority,
+  date,
+  columnId,
+}: KanbanCardComponentProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [dragging, setDragging] = useState<boolean>(false);
   useEffect(() => {
@@ -24,13 +36,14 @@ function KanbanCard({ name, project, priority, date }: KanbanCardProps) {
 
     return draggable({
       element: el,
+      getInitialData: () => ({ cardId: id, columnId: columnId }),
+      canDrag: () => columnId !== "Done",
       onGenerateDragPreview: () => {
         setDragging(true);
-        console.log("start");
       },
       onDrop: () => setDragging(false),
     });
-  }, []);
+  }, [id, columnId]);
   const styles = priorityStyles[priority];
   return (
     <div
