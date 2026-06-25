@@ -2,6 +2,7 @@ import KanbanBoard from "./KanbanBoard";
 import type { KanbanCardProps } from "./KanbanCard";
 import { useState, useEffect } from "react";
 import { monitorForElements } from "@atlaskit/pragmatic-drag-and-drop/element/adapter";
+import KanbanTaskModal from "./KanbanTaskModal";
 
 interface KanbanProps {
   InitialToDo: KanbanCardProps[];
@@ -30,6 +31,8 @@ function Kanban({
     Done: InitialDone,
   });
 
+  const [activeTask, setActiveTask] = useState<KanbanCardProps | null>(null);
+
   useEffect(() => {
     return monitorForElements({
       onDrop({ source, location }) {
@@ -52,6 +55,10 @@ function Kanban({
           const targetList = [...prev[targetColumn]];
           targetList.push(movedCard);
 
+          if (targetColumn === "Ready") {
+            setTimeout(() => setActiveTask(movedCard), 50);
+          }
+
           return {
             ...prev,
             [sourceColumn]: sourceList,
@@ -61,6 +68,17 @@ function Kanban({
       },
     });
   }, []);
+
+  function handleSaveLink(cardId: string, sharepointLink: string) {
+    console.log(`Guardando Link "${sharepointLink}" en la tarjeta ${cardId}`);
+
+    setBoard((prev) => {
+      const updatedReady = prev.Ready.map((card) =>
+        card.id === cardId ? { ...card, sharepointLink } : card,
+      );
+      return { ...prev, Ready: updatedReady };
+    });
+  }
 
   return (
     <div className="flex gap-6 w-full p-6 ">
@@ -72,6 +90,13 @@ function Kanban({
         Tasks={board.Ready}
       />
       <KanbanBoard columnId="Done" Title="Terminado" Tasks={board.Done} />
+      {activeTask && (
+        <KanbanTaskModal
+          tarea={activeTask}
+          onClose={() => setActiveTask(null)}
+          onSaveLink={handleSaveLink}
+        />
+      )}
     </div>
   );
 }

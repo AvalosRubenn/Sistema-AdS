@@ -67,7 +67,7 @@ function KanbanTaskModal({ tarea, onClose, onSaveLink }: KanbanTaskModalProps) {
               </div>
               <input
                 type="url"
-                placeholder="https://tu-organizacion.sharepoint.com/..."
+                placeholder="https://zies.sharepoint.com/..."
                 value={sharepointLink}
                 onChange={(e) => {
                   setSharepointLink(e.target.value);
@@ -90,11 +90,6 @@ function KanbanTaskModal({ tarea, onClose, onSaveLink }: KanbanTaskModalProps) {
             {error && (
               <p className="mt-2 text-xs text-error font-medium">{error}</p>
             )}
-          </div>
-
-          <div className="rounded-xl bg-muted p-4 text-xs text-muted-foreground">
-            Asegúrate de que los permisos del enlace en SharePoint permitan el
-            acceso a los miembros revisores de tu equipo.
           </div>
         </div>
 
