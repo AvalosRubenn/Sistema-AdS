@@ -8,7 +8,6 @@ interface KanbanBoardProps {
   Tasks: KanbanCardProps[];
   Title: string;
   columnId: string;
-  onEnterCard?: () => void;
 }
 
 function KanbanBoard({ Tasks, Title, columnId }: KanbanBoardProps) {
