@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import ProjectCard, {
   type ProjectCardProps,
 } from "../components/Projects/ProjectCard";
@@ -49,15 +50,22 @@ function Proyectos() {
       <SearchBar />
       <div className="grid grid-cols-3 gap-8 items-center">
         {Projects.map((p) => (
-          <ProjectCard
-            Title={p.Title}
-            Code={p.Code}
-            Celula={p.Celula}
-            ProgressPercentage={p.ProgressPercentage}
-            priority={p.priority}
-            ArchitectName={p.ArchitectName}
-            Deadline={p.Deadline}
-          />
+          <Link
+            key={p.Code}
+            to={`/proyectos/${p.Code}`}
+            state={{ project: p }}
+            className="hover:scale-[1.01] transition-transform duration-200"
+          >
+            <ProjectCard
+              Title={p.Title}
+              Code={p.Code}
+              Celula={p.Celula}
+              ProgressPercentage={p.ProgressPercentage}
+              priority={p.priority}
+              ArchitectName={p.ArchitectName}
+              Deadline={p.Deadline}
+            />
+          </Link>
         ))}
       </div>
     </div>

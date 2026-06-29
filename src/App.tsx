@@ -10,6 +10,7 @@ import Arquitectos from "./pages/Arquitectos";
 import DashboardArq from "./pages/DashboardArq";
 import EntregaDeTareas from "./pages/EntregaDeTareas";
 import Proyectos from "./pages/Proyectos";
+import ProyectoDetalle from "./pages/ProyectoDetalle";
 
 function App() {
   return (
@@ -75,6 +76,14 @@ function App() {
         element={
           <AppLayout>
             <Proyectos />
+          </AppLayout>
+        }
+      />
+      <Route
+        path="/proyectos/:code"
+        element={
+          <AppLayout>
+            <ProyectoDetalle />
           </AppLayout>
         }
       />
