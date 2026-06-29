@@ -58,6 +58,30 @@ function ProyectoDetalle() {
           </p>
         </div>
         <p className="text-zies-azul-2 text-lg mt-4 ">ZIES-{project.Code}</p>
+        <div className="grid grid-cols-3 gap-8 mt-4">
+          {/*Cartas de stats del proyecto*/}
+          <div className="bg-background rounded-2xl p-3 border border-border shadowm-sm w-full flex flex-col pl-6 gap-2">
+            <span className="text-muted-foreground mt-2">Progreso</span>
+            <span className="text-2xl font-semibold">
+              {project.ProgressPercentage}%
+            </span>
+            <div className="h-2 rounded-full bg-muted mb-2">
+              <div
+                style={{ width: `${project.ProgressPercentage}%` }}
+                className="h-2 rounded-full bg-success"
+              />
+            </div>
+          </div>
+          <div className="bg-background rounded-2xl p-3 border border-border shadowm-sm w-full flex flex-col pl-6 gap-2">
+            <span className="text-muted-foreground mt-2">Fecha limite</span>
+            <span className="text-2xl font-semibold">{project.Deadline}</span>
+            <span className="text-muted-foreground">XX días restantes</span>
+          </div>
+          <div className="bg-background rounded-2xl p-3 border border-border shadowm-sm w-full flex flex-col pl-6 gap-2">
+            <span className="text-muted-foreground mt-2">Complejidad</span>
+            <span className="text-2xl font-semibold">Alta</span>
+          </div>
+        </div>
       </div>
     );
   }
