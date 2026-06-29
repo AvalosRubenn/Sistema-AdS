@@ -5,6 +5,7 @@ import Task from "../components/Task";
 import TaskModal from "../components/TaskModal";
 
 import type { Tarea } from "../components/Task";
+import SearchBar from "../components/SearchBar";
 
 const tareas: Tarea[] = [
   {
@@ -38,27 +39,7 @@ function RevisionDeTareas() {
         Revisión de tareas
       </h1>
 
-      <div className="relative mb-6">
-        <Search
-          size={18}
-          className="
-            absolute left-4 top-1/2
-            -translate-y-1/2
-            text-muted-foreground
-          "
-        />
-
-        <input
-          type="text"
-          placeholder="Buscar..."
-          className="
-            h-11 w-full rounded-xl
-            border border-border
-            bg-background
-            pl-11 pr-4
-          "
-        />
-      </div>
+      <SearchBar />
 
       <div className="overflow-hidden rounded-2xl border border-border bg-background shadow-sm">
         {tareas.map((tarea, index) => (
