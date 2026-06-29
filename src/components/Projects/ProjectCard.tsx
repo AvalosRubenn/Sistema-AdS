@@ -53,7 +53,10 @@ function ProjectCard({
           <span className="text-muted-foreground">{ProgressPercentage}%</span>
         </div>
         <div className="h-2 rounded-full bg-muted">
-          <div className="h-2 rounded-full bg-success w-[67%]" />
+          <div
+            style={{ width: `${ProgressPercentage}%` }}
+            className="h-2 rounded-full bg-success"
+          />
         </div>
         <div className="flex items-center">
           <span className="text-muted-foreground mr-auto">Arquitecto(a)</span>
