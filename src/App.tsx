@@ -9,6 +9,7 @@ import Inbox from "./pages/Inbox";
 import Arquitectos from "./pages/Arquitectos";
 import DashboardArq from "./pages/DashboardArq";
 import EntregaDeTareas from "./pages/EntregaDeTareas";
+import Proyectos from "./pages/Proyectos";
 
 function App() {
   return (
@@ -65,6 +66,15 @@ function App() {
         element={
           <AppLayout>
             <EntregaDeTareas />
+          </AppLayout>
+        }
+      />
+
+      <Route
+        path="/proyectos"
+        element={
+          <AppLayout>
+            <Proyectos />
           </AppLayout>
         }
       />
