@@ -6,6 +6,7 @@ import {
   ClipboardCheck,
   Users,
   SquareCheckBig,
+  FolderKanban,
 } from "lucide-react";
 
 import { NavLink } from "react-router-dom";
@@ -135,6 +136,23 @@ function Sidebar() {
         >
           <SquareCheckBig size={20} />
           <span className="font-medium">Entrega de tareas</span>
+        </NavLink>
+        <NavLink
+          to="/proyectos"
+          className={({ isActive }) => `
+              flex items-center gap-3
+              rounded-lg
+              px-4 py-3
+              transition-colors
+              ${
+                isActive
+                  ? "bg-zies-azul-2 text-white"
+                  : "text-foreground hover:bg-accent"
+              }
+            `}
+        >
+          <FolderKanban size={20} />
+          <span className="font-medium">Proyectos</span>
         </NavLink>
       </nav>
 
