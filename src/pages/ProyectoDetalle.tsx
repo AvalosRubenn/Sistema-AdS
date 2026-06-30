@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import type { ProjectCardProps } from "../components/Projects/ProjectCard";
 import ProjectTasks from "../components/Projects/ProjectTasks";
+import ProjectTimeline from "../components/Projects/ProjectTimeline";
 
 const priorityStyles = {
   ALTA: { bg: "bg-error" },
@@ -85,6 +86,7 @@ function ProyectoDetalle() {
         </div>
         <div className="flex gap-8 mt-4">
           <ProjectTasks />
+          <ProjectTimeline />
         </div>
       </div>
     );
