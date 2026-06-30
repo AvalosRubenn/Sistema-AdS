@@ -1,4 +1,22 @@
 import ProjectTask from "./ProjectTask";
+import type { ProjectTaskProps } from "./ProjectTask";
+
+const Tasks: ProjectTaskProps[] = [
+  {
+    level: "R1",
+    name: "Detalle de Proyectos",
+    dueDate: "30 jun, 2026",
+    state: "Aceptada",
+    link: " https://sharepoint.com/link-de-ejemplo",
+  },
+  {
+    level: "R3",
+    name: "Expansión solana memecoin",
+    dueDate: "08 ago, 2026",
+    state: "Aceptada",
+    link: " https://sharepoint.com/link-de-ejemplo",
+  },
+];
 
 function ProjectTasks() {
   return (
@@ -7,9 +25,15 @@ function ProjectTasks() {
         Tareas
       </p>
       <div className="flex flex-col">
-        <ProjectTask />
-        <ProjectTask />
-        <ProjectTask />
+        {Tasks.map((t) => (
+          <ProjectTask
+            level={t.level}
+            name={t.name}
+            dueDate={t.dueDate}
+            state={t.state}
+            link={t.link}
+          />
+        ))}
       </div>
     </div>
   );
